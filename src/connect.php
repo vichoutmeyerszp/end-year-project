@@ -1,5 +1,5 @@
 <?php
-$mysqli = new mysqli("localhost", "root", "", "db2eindproject");
+$mysqli = new mysqli("localhost", "root", "", "dbeindproject");
 $aanpassenUTF = $mysqli->query("SET NAMES utf8");
 
 if ($mysqli->connect_errno) {
