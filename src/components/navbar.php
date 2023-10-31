@@ -5,12 +5,12 @@ session_start();
 ?>
 <div class="navbar bg-[#F1FAEE]">
     <div class="navbar-start">
-        <a href="index.php" class="btn btn-ghost normal-case text-xl text-black">Main page</a>
+        <a href="index.php" class="btn btn-ghost normal-case text-xl text-black">Game World</a>
     </div>
         <?php
         if (isset($_SESSION["login"])) {
 
-                        ?>
+            ?>
 <div class="dropdown dropdown-end">
     <label tabindex="0" class="btn btn-ghost btn-circle avatar">
         <div class="w-10 rounded-full">
@@ -29,8 +29,9 @@ session_start();
         </li>
 
         <li><a>Settings</a></li>
-        <li><a href="Highscore.php" class="justify-between">Highscores bekijken</a></li>
-        <li><a href="leaderboard.php">Leaderboard bekijken</a></li>
+        <li><a href="announcement.php">Announcements</a></li>
+        <li><a href="highscore.php">Highscores</a></li>
+        <li><a href="leaderboard.php">Leaderboard</a></li>
         <li><a href="loguit.php">Uitloggen</a></li>
     </ul>
 </div>
