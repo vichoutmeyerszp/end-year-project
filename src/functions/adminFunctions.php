@@ -9,8 +9,8 @@ function getTimeDifference($endTime) {
 }
 
 function getAnnouncements($connection,) {
-    $resultaat = $connection->query("SELECT tblannouncements.Announcementid, tblannouncements.AnnouncementText, tblannouncements.StartTime
-    FROM tblannouncements");
+    $resultaat = $connection->query("SELECT tblannouncements.Announcementid, tblannouncements.AnnouncementText, tblannouncements.StartTime 
+    FROM tblannouncements ORDER BY tblannouncements.Announcementid DESC");
     return $resultaat;
 }
 
