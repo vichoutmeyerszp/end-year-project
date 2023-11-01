@@ -24,39 +24,65 @@ if(!(isset($_SESSION['login']))) {
                 <tr>
                     <th>Announcements</th>
                     <th class="text-center">Descriptie</th>
-                    <th class="text-center">Eindtijd</th>
+                    <th class="text-center">Aangemaakt Announcement</th>
                     <th></th>
                     <th></th>
                 </tr>
             </thead>
             <tbody>
                 <?php
-                    foreach (getAnnouncements($mysqli) as $row) {
+                    foreach(getAnnouncements($mysqli) as $row) {
                         echo "
                         <tr>
                             <td>
                                 <div class='flex items-center space-x-3'>
-                                    <div class='font-bold'>".$row['Announcementid']."</div>
-                                    <div class='text-sm opacity-50'>".$row['voornaam']." ".$row['naam']."</div>
-                                    </div>
+                                   <div class='font-bold'>".$row['Announcementid']."</div>
                                 </div>
                             </td>
-                            <td class='text-center'>"; 
+                            <td class='text-center'>";
                             
-                            $row['AnnouncementText'];
+                            echo $row['AnnouncementText'];
                             
                             echo "</td>
-                            <td class='text-center'>".$row['EndTime']."</td>
-                            <th class='text-center'>
-                            </th>
+                            <td class='text-center'>".$row['StartTime']."</td>
                             <td>";
-                            if($row["admin == 1"]){
-                             echo "<a href='verwijderUitFavorieten.php?product=".$row['productid']."'><button class='btn btn-sm btn-circle btn-ghost'>✕</button>";
+                            if(checkIfAdmin($mysqli, $_SESSION["login"])){
+                             echo "<a href='announcementVerwijderen.php?announcement=".$row['Announcementid']."'><button class='btn btn-sm btn-circle btn-ghost'>✕</button>";
                             };
                             "</td>
                         </tr>
                         ";
                     }
+                    echo'
+
+                         <button class="btn  hover:bg-[#000048] text-center" onclick="my_modal_1.showModal()">Voeg announcement Toe</button>
+                         <dialog id="my_modal_1" class="modal">
+                             <div class="modal-box">
+                                 <h3 class="font-bold text-lg">Geef hier je announcement hier</h3>
+                                 <form class="form-control" method="post" action="announcement.php">
+                                    <textarea class="textarea textarea-bordered h-24  text-black bg-white" name="announcement"></textarea>
+                                         <div class="modal-action">
+                                             <form method="post">
+                                                 <input type="submit" value="submit" name="toevoegen"  class="btn btn-ghost text-black hover:text-white hover:bg-black">  
+                                                 <button class="btn">Cancel</button>';
+                                                 if (isset($_POST["toevoegen"])) {
+                                                    $Announcement = $_POST["announcement"];
+                                                    $gemaakteTijdstip = date("Y-m-d H:i:s");
+                                
+                                                    if(addAnnouncement($mysqli, $Announcement, $gemaakteTijdstip )) {
+                                                        header('location: announcement.php');
+                                                    }
+                                                }
+                                            ;
+                                
+                                            '</form>
+                                         </div>
+                                    </div>
+                             </div>
+                        </dialog>
+                        </div>
+                        </div>';
+                     
                 ?>
             </tbody>
         </table>
