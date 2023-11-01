@@ -8,11 +8,19 @@ function getTimeDifference($endTime) {
     return $timeDifference;
 }
 
-function getAnnouncements($connection) {
-    $resultaat = $connection->query("SELECT tblannouncements.Announcementid, tblannouncements.AnnouncementText, tblannouncements.EndTime, tblannouncements.hostid, tblgebruikers.voornaam, tblgebruikers.naam 
-    FROM tblannouncements
-    INNER JOIN tblgebruikers ON (tblgebruikers.gebruikerid = tblannouncements.Announcementid)");
+function getAnnouncements($connection,) {
+    $resultaat = $connection->query("SELECT tblannouncements.Announcementid, tblannouncements.AnnouncementText, tblannouncements.StartTime
+    FROM tblannouncements");
     return $resultaat;
 }
+
+function addAnnouncement($connection, $AnnouncementText, $StartTime) {
+        $resultaat = $connection->query("INSERT INTO tblannouncements (AnnouncementText, StartTime) VALUES ('".$AnnouncementText."','".$StartTime."')");
+        return $resultaat;
+    }
+    function checkIfAdmin($connection,$email){
+        $resultaat = $connection->query("SELECT * FROM tblgebruikers where email = '".$email."' and admin=1");
+        return ($resultaat->num_rows == 0)?false:$resultaat->fetch_all(MYSQLI_ASSOC);
+    }
 
 ?>
