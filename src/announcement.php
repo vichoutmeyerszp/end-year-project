@@ -25,12 +25,39 @@ if(!(isset($_SESSION['login']))) {
                     <th>Announcements</th>
                     <th class="text-center">Descriptie</th>
                     <th class="text-center">Aangemaakt Announcement</th>
-                    <th></th>
-                    <th></th>
                 </tr>
             </thead>
             <tbody>
                 <?php
+                echo'
+
+                <button class="btn  hover:bg-[#000048] text-center" onclick="my_modal_1.showModal()">Voeg announcement Toe</button>
+                <dialog id="my_modal_1" class="modal">
+                    <div class="modal-box">
+                        <h3 class="font-bold text-lg">Geef hier je announcement hier</h3>
+                        <form class="form-control" method="post" action="announcement.php">
+                           <textarea class="textarea textarea-bordered h-24  text-black bg-white" name="announcement"></textarea>
+                                <div class="modal-action">
+                                    <form method="post">
+                                        <input type="submit" value="submit" name="toevoegen"  class="btn btn-ghost text-black hover:text-white hover:bg-black">  
+                                        <button class="btn">Cancel</button>';
+                                        if (isset($_POST["toevoegen"])) {
+                                           $Announcement = $_POST["announcement"];
+                                           $gemaakteTijdstip = date("Y-m-d H:i:s");
+                       
+                                           if(addAnnouncement($mysqli, $Announcement, $gemaakteTijdstip )) {
+                                               header('location: announcement.php');
+                                           }
+                                       }
+                                   ;
+                       
+                                   '</form>
+                                </div>
+                           </div>
+                    </div>
+               </dialog>
+               </div>
+               </div>';
                     foreach(getAnnouncements($mysqli) as $row) {
                         echo "
                         <tr>
@@ -53,35 +80,7 @@ if(!(isset($_SESSION['login']))) {
                         </tr>
                         ";
                     }
-                    echo'
-
-                         <button class="btn  hover:bg-[#000048] text-center" onclick="my_modal_1.showModal()">Voeg announcement Toe</button>
-                         <dialog id="my_modal_1" class="modal">
-                             <div class="modal-box">
-                                 <h3 class="font-bold text-lg">Geef hier je announcement hier</h3>
-                                 <form class="form-control" method="post" action="announcement.php">
-                                    <textarea class="textarea textarea-bordered h-24  text-black bg-white" name="announcement"></textarea>
-                                         <div class="modal-action">
-                                             <form method="post">
-                                                 <input type="submit" value="submit" name="toevoegen"  class="btn btn-ghost text-black hover:text-white hover:bg-black">  
-                                                 <button class="btn">Cancel</button>';
-                                                 if (isset($_POST["toevoegen"])) {
-                                                    $Announcement = $_POST["announcement"];
-                                                    $gemaakteTijdstip = date("Y-m-d H:i:s");
-                                
-                                                    if(addAnnouncement($mysqli, $Announcement, $gemaakteTijdstip )) {
-                                                        header('location: announcement.php');
-                                                    }
-                                                }
-                                            ;
-                                
-                                            '</form>
-                                         </div>
-                                    </div>
-                             </div>
-                        </dialog>
-                        </div>
-                        </div>';
+                    
                      
                 ?>
             </tbody>
