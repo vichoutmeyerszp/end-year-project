@@ -60,7 +60,7 @@ include "components/navbar.php";
             </div>
           </div>
     <div class="card-actions">
-      <a href="SpaceInvaders.php" class="btn btn-primary">Play now!</a>
+      <a href="Games/SpaceInvaders.py" class="btn btn-primary">Play now!</a>
     </div>
   </div>
 </div>
