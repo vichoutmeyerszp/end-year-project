@@ -43,7 +43,7 @@ if(!(isset($_SESSION['login']))) {
                                         <button class="btn">Cancel</button>';
                                         if (isset($_POST["toevoegen"])) {
                                            $Announcement = $_POST["announcement"];
-                                           $gemaakteTijdstip = date("Y-m-d H:i:s");
+                                           $gemaakteTijdstip = date("Y-m-d");
                        
                                            if(addAnnouncement($mysqli, $Announcement, $gemaakteTijdstip )) {
                                                header('location: announcement.php');
