@@ -4,6 +4,7 @@ session_start();
 
 include "connect.php";
 include "./functions/userFunctions.php";
+include "./functions/adminFunctions.php";
 if (isset($_SESSION["login"])) {
     header("location:index.php");
 }
