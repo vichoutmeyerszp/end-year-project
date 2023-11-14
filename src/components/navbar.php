@@ -24,11 +24,7 @@ session_start();
         </div>
     </label>
     <ul tabindex="0" class="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-black text-white rounded-box w-52">
-        <li>
-            <a href="ProfielBewerken" class="justify-between">Profiel Bewerken</a>
-        </li>
-
-        <li><a>Settings</a></li>
+        <li><a href="ProfielBewerken" class="justify-between">Profiel Bewerken</a></li>
         <li><a href="announcement.php">Announcements</a></li>
         <li><a href="highscore.php">Highscores</a></li>
         <li><a href="leaderboard.php">Leaderboard</a></li>
