@@ -31,7 +31,7 @@ include "components/navbar.php";
           Info over het spel
            </div>
            <div class="collapse-content"> 
-             <p>In dit klein spelletje gaan we kijken of je jezelf niet kan mislopen. Je krijgt een heleboel woorden, en het is de bedoeling dat je de kleur van het woord ingeef, terwijl het woord een ander kleur zal geven. Veel succes!</p>
+             <p>In dit klein spelletje gaan we kijken of je jezelf niet kan mislopen. Je krijgt 2 woorden, en het is de bedoeling je in de 2 woorden de kleur vergelijking zoekt dat de 2 woorden geven. Veel succes!</p>
             </div>
           </div>
     <div class="card-actions">
