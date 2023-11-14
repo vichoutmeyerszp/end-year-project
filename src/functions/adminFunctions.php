@@ -8,14 +8,14 @@ function getTimeDifference($endTime) {
     return $timeDifference;
 }
 
-function getAnnouncements($connection,) {
-    $resultaat = $connection->query("SELECT tblannouncements.Announcementid, tblannouncements.AnnouncementText, tblannouncements.StartTime 
+function getAnnouncements($connection) {
+    $resultaat = $connection->query("SELECT *
     FROM tblannouncements ORDER BY tblannouncements.Announcementid DESC");
     return $resultaat;
 }
 
-function addAnnouncement($connection, $AnnouncementText, $StartTime) {
-        $resultaat = $connection->query("INSERT INTO tblannouncements (AnnouncementText, StartTime) VALUES ('".$AnnouncementText."','".$StartTime."')");
+function addAnnouncement($connection, $AnnouncementTitle, $AnnouncementText, $StartTime) {
+        $resultaat = $connection->query("INSERT INTO tblannouncements (AnnouncementTitle, AnnouncementText, StartTime) VALUES ('".$AnnouncementTitle."','".$AnnouncementText."','".$StartTime."')");
         return $resultaat;
     }
     function checkIfAdmin($connection,$email){
