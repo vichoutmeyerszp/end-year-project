@@ -65,7 +65,7 @@ if (isset($_POST["wijzigen"])) {
               <div class="flex flex-row gap-2"> 
                   <div class="flex flex-col w-full"> 
                   <label class="label text-black">Email</label>
-                  <input type="email" name="email" value="' . $row["email"] . '"  class="input input-bordered w-full max-w-md text-black bg-white" />   
+                  <input type="email" name="email" value="' . $row["email"] . '"  class="input input-bordered w-full max-w-md text-black bg-white" disabled/>   
                   </div>
                 </div>
               <div class="flex flex-row gap-2"> 
