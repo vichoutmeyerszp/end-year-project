@@ -7,7 +7,7 @@ let boardWidth = tileSize * columns; // 32 * 16
 let boardHeight = tileSize * rows; // 32 * 16
 let context;
 
-//ship
+//schip
 let shipWidth = tileSize*2;
 let shipHeight = tileSize;
 let shipX = tileSize * columns/2 - tileSize;
@@ -21,7 +21,7 @@ let ship = {
 }
 
 let shipImg;
-let shipVelocityX = tileSize; //ship moving speed
+let shipVelocityX = tileSize; //beweging schip
 
 //aliens
 let alienArray = [];
@@ -33,12 +33,12 @@ let alienImg;
 
 let alienRows = 2;
 let alienColumns = 3;
-let alienCount = 0; //number of aliens to defeat
-let alienVelocityX = 1; //alien moving speed
+let alienCount = 0; //Aliens nog te vermoorden voor een nieuwe set aliens komt
+let alienVelocityX = 1; //Beweging aliens
 
-//bullets
+//schoten
 let bulletArray = [];
-let bulletVelocityY = -10; //bullet moving speed
+let bulletVelocityY = -10; //Beweging schot
 
 let score = 0;
 let gameOver = false;
@@ -47,11 +47,8 @@ window.onload = function() {
     board = document.getElementById("board");
     board.width = boardWidth;
     board.height = boardHeight;
-    context = board.getContext("2d"); //used for drawing on the board
-
-    //draw initial ship
-    // context.fillStyle="green";
-    // context.fillRect(ship.x, ship.y, ship.width, ship.height);
+    context = board.getContext("2d"); //In de box tekenen
+ 
 
 
     shipImg = new Image();
