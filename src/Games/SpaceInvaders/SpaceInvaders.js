@@ -1,10 +1,10 @@
-let tileSize = 32;
-let rows = 16;
-let columns = 16;
+let tileSize = 43;
+let rows = 20;
+let columns = 40;
 
 let board;
-let boardWidth = tileSize * columns; // 32 * 16
-let boardHeight = tileSize * rows; // 32 * 16
+let boardWidth = tileSize * columns; // 43 * 40
+let boardHeight = tileSize * rows; // 43 * 20
 let context;
 
 //schip
@@ -21,7 +21,7 @@ let ship = {
 }
 
 let shipImg;
-let shipVelocityX = tileSize; //beweging schip
+let shipVelocityX = tileSize + 50; //beweging schip
 
 //aliens
 let alienArray = [];
@@ -34,11 +34,11 @@ let alienImg;
 let alienRows = 2;
 let alienColumns = 3;
 let alienCount = 0; //Aliens nog te vermoorden voor een nieuwe set aliens komt
-let alienVelocityX = 1; //Beweging aliens
+let alienVelocityX = 2; //Beweging aliens
 
 //schoten
 let bulletArray = [];
-let bulletVelocityY = -10; //Beweging schot
+let bulletVelocityY = -20; //Beweging schot
 
 let score = 0;
 let gameOver = false;
@@ -70,7 +70,7 @@ function update() {
     requestAnimationFrame(update);
 
     if (gameOver) {
-        return;
+        return score;
     }
 
     context.clearRect(0, 0, board.width, board.height);
@@ -83,6 +83,8 @@ function update() {
         let alien = alienArray[i];
         if (alien.alive) {
             alien.x += alienVelocityX;
+            
+            
 
             
             if (alien.x + alien.width >= board.width || alien.x <= 0) {
@@ -133,10 +135,10 @@ function update() {
         alienColumns = Math.min(alienColumns + 1, columns/2 -2);
         alienRows = Math.min(alienRows + 1, rows-4);
         if (alienVelocityX > 0) {
-            alienVelocityX += 0.1;
+            alienVelocityX += 1;
         }
         else {
-            alienVelocityX -= 0.1; 
+            alienVelocityX -= 1; 
         }
         alienArray = [];
         bulletArray = [];
@@ -145,7 +147,7 @@ function update() {
 
     //score
     context.fillStyle="white";
-    context.font="16px courier";
+    context.font="18px courier";
     context.fillText(score, 5, 20);
 }
 
