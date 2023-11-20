@@ -153,7 +153,7 @@ function update() {
 
 function moveShip(e) {
     if (gameOver) {
-        return;
+        return score;
     }
 
     if (e.code == "ArrowLeft" && ship.x - shipVelocityX >= 0) {
@@ -183,7 +183,7 @@ function createAliens() {
 
 function shoot(e) {
     if (gameOver) {
-        return;
+        return score;
     }
 
     if (e.code == "Space") {
