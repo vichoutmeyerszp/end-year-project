@@ -12,13 +12,10 @@ include "components/navbar.php";
 </head>
 
 <body class="h-screen bg-[#F8F8FF]">
-  <tr>
-    <th></th>
-    <th></th>
-    <th></th>
-</tr>
-<td>
-<div class="card w-96 bg-[#D3D3D3]   shadow-xl">
+ 
+<div class="w-96 carousel rounded-box items-justify-center">
+  <div class="carousel-item h-full">
+  <div class="card w-96 bg-[#D3D3D3]   shadow-xl">
 <div class="card-body items-center text-center">
     <h2 class="card-title">Colors</h2>
   <figure class="px-10 pt-10">
@@ -39,10 +36,9 @@ include "components/navbar.php";
     </div>
   </div>
 </div>
-</td>
-
-<td>
-<div class="card w-96 bg-[#D3D3D3] shadow-xl">
+  </div> 
+  <div class="carousel-item h-full">
+  <div class="card w-96 bg-[#D3D3D3] shadow-xl">
 <div class="card-body items-center text-center">
  <h2 class="card-title">Space invaders</h2>
   <figure class="px-10 pt-10">
@@ -64,7 +60,8 @@ include "components/navbar.php";
     </div>
   </div>
 </div>
-</td>
-  
+  </div> 
+</div>
+
 </body>
 </html>

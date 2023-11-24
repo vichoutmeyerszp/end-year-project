@@ -63,7 +63,7 @@ window.onload = function() {
 
     requestAnimationFrame(update);
     document.addEventListener("keydown", moveShip);
-    document.addEventListener("keyup", shoot);
+    document.addEventListener("keydown", shoot);
 }
 
 function update() {
@@ -198,6 +198,7 @@ function shoot(e) {
         bulletArray.push(bullet);
     }
 }
+
 
 function detectCollision(a, b) {
     return a.x < b.x + b.width &&   
