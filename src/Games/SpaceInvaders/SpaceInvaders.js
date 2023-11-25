@@ -122,7 +122,7 @@ function update() {
                 bullet.used = true;
                 alien.alive = false;
                 alienCount--;
-                score += 100;
+                score += 50;
             }
         }
     }
@@ -153,7 +153,7 @@ function update() {
     context.fillStyle="white";
     context.font="18px courier";
     context.fillText(score, 5, 20);
-    context.fillText("Lives" + lives, 5, 20);
+    context.fillText(lives, 5, 20);
 }
 
 function moveShip(e) {
