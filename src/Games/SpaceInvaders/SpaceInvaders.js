@@ -2,6 +2,8 @@ let tileSize = 43;
 let rows = 20;
 let columns = 40;
 
+let lives = 3;
+
 let board;
 let boardWidth = tileSize * columns; // 43 * 40
 let boardHeight = tileSize * rows; // 43 * 20
@@ -43,6 +45,8 @@ let bulletVelocityY = -20; //Beweging schot
 let score = 0;
 let gameOver = false;
 
+
+
 window.onload = function() {
     board = document.getElementById("board");
     board.width = boardWidth;
@@ -70,7 +74,7 @@ function update() {
     requestAnimationFrame(update);
 
     if (gameOver) {
-        return score;
+        
     }
 
     context.clearRect(0, 0, board.width, board.height);
@@ -149,6 +153,7 @@ function update() {
     context.fillStyle="white";
     context.font="18px courier";
     context.fillText(score, 5, 20);
+    context.fillText("Lives" + lives, 5, 20);
 }
 
 function moveShip(e) {
