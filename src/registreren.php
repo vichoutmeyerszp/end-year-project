@@ -3,7 +3,7 @@
     include "functions/userFunctions.php";
 ?>
 <!DOCTYPE html>
-<html lang="en" class="bg-[#F1FAEE]">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,6 +11,22 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <title>Registreer</title>
 </head>
+
+<style>
+
+      body {
+       
+     
+        background: linear-gradient(
+          0deg,
+          rgb(97, 98, 99) 0%,
+          rgba(0, 0, 0, 0) 100%
+        );
+      }
+
+      
+    </style>
+
 <body>
 <div class="flex justify-start items-start">
     <a href="index.php" class="btn btn-ghost normal-case text-xl text-black">Game World</a> 

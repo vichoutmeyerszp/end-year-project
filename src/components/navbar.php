@@ -3,7 +3,7 @@ include "./connect.php";
 include "./functions/userFunctions.php";
 session_start();
 ?>
-<div class="navbar bg-[#F8F8FF]">
+<div class="navbar bg-[#F8F8F8]">
     <div class="navbar-start">
         <a href="index.php" class="btn btn-ghost normal-case text-xl text-black">Game World</a>
     </div>

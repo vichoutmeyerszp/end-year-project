@@ -11,7 +11,28 @@ include "components/navbar.php";
   <script src="https://cdn.tailwindcss.com"></script>
 </head>
 
-<body class="h-screen bg-[#F8F8FF]">
+<style>
+
+      body {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        padding: 0px;
+        margin: 0px;
+        height: 100vh;
+        background: linear-gradient(
+          0deg,
+          rgb(97, 98, 99) 0%,
+          rgba(0, 0, 0, 0) 100%
+        );
+      }
+
+      
+    </style>
+
+<body>
+
+
  
 <div class="w-96 carousel rounded-box items-justify-center">
   <div class="carousel-item h-full">

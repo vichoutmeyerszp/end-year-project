@@ -6,7 +6,7 @@ include "functions/adminFunctions.php";
 ?>
 
 <!DOCTYPE html>
-<html lang="en" class="bg-[#F1FAEE]">
+<html>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -14,7 +14,26 @@ include "functions/adminFunctions.php";
     <script src="https://cdn.tailwindcss.com"></script>
     <title>Announcements</title>
 </head>
-<body class="min-h-screen bg-[#F8F8FF]">
+
+<style>
+
+      body {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        padding: 0px;
+        margin: 0px;
+        height: 100vh;
+        background: linear-gradient(
+          0deg,
+          rgb(97, 98, 99) 0%,
+          rgba(0, 0, 0, 0) 100%
+        );
+      }
+
+      
+    </style>
+<body class="min-h-screen">
     <div class="overflow-x-auto max-w-4xl mx-auto p-3">
         <table class="table bg-white shadow-lg">
             <thead>

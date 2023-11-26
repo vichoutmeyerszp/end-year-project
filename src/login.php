@@ -38,7 +38,24 @@ if (isset($_POST["submit"])) {
 <link href="https://cdn.jsdelivr.net/npm/daisyui@3.7.7/dist/full.css" rel="stylesheet" type="text/css" />
 <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body class="min-h-screen bg-[#F1FAEE]">
+
+<style>
+
+      body {
+       
+     
+        background: linear-gradient(
+          0deg,
+          rgb(97, 98, 99) 0%,
+          rgba(0, 0, 0, 0) 100%
+        );
+      }
+
+      
+    </style>
+
+
+<body class="min-h-screen">
 <div class="flex justify-start items-start">
         <a href="index.php" class="btn btn-ghost normal-case text-xl text-black"></a>
         <div class="card w-full max-w-lg h-screen shadow-2xl bg-white ml-auto">

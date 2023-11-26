@@ -6,8 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body>
-   <img src="correct.svg" alt="" id="checkmark">
-   <img src="incorrect.svg" alt="" id="wrong">
+   <img src="data/Correct.png" alt="" id="checkmark">
+   <img src="data/Wrong.png" alt="" id="wrong">
     <div class="top">
        <button id="start" onclick="startGame()">Start</button>
         <div id="color1" class="colorText color1"></div>
