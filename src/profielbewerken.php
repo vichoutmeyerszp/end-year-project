@@ -20,7 +20,6 @@ if(!isset($_SESSION["login"])){
 
 if (isset($_POST["wijzigen"])) {
     $gebruikerid = $_SESSION["login"];
-    $email = $_POST["email"];
     $voornaam = $_POST["voornaam"];
     $naam = $_POST["naam"];
     $wachtwoord = $_POST["wachtwoord"];
@@ -44,7 +43,7 @@ if (isset($_POST["wijzigen"])) {
       };
     }
     $beschrijving = $_POST["beschrijving"]; 
-    if(updateUser($mysqli, $gebruikerid, $voornaam, $naam, $email, $wachtwoord, $file_name, $beschrijving)){
+    if(updateUser($mysqli, $gebruikerid, $voornaam, $naam, $wachtwoord, $file_name, $beschrijving)){
         header('location: index.php');
     }else{
         print $mysqli->error;

@@ -95,7 +95,7 @@ include "functions/adminFunctions.php";
                             echo "</td>
                             <td class='text-center'>".$row['StartTime']."</td>
                             <td>";
-                            if(!checkIfAdmin($mysqli, $_SESSION["login"])){
+                            if(checkIfAdmin($mysqli, $_SESSION["login"])){
                              echo "<a href='announcementVerwijderen.php?announcement=".$row['Announcementid']."'><button class='btn btn-sm btn-circle btn-ghost'>✕</button>";
                             };
                             "</td>

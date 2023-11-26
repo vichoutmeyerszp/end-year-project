@@ -1,12 +1,20 @@
+
+
+
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@3.7.4/dist/full.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
     <title>Space Invaders</title>
     <link rel="shortcut icon" href="#" />
+        <a href="../../index.php" class="btn btn-ghost normal-case text-xl text-black">Game World</a>
     <style>
+      
       canvas {
         box-shadow: black 20px 10px 50px;
       }
@@ -29,11 +37,24 @@
           rgba(0, 0, 0, 0) 100%
         );
       }
+
+      
     </style>
   </head>
   <body>
+  <body>
     <h1>Space Invaders</h1>
-    <canvas id="game"></canvas>
+    <h1 id="newGame" onclick="runGame()">Begin</h1>
+    <canvas id="game" width="240" height="400">
     <script type="module" src="index.js"></script>
+    <script>
+      var runGame = function(){
+        document.getElementById("newGame").style.display = "none";
+      };
+    </script>
+    
+</body>
+<html>  
+  
   </body>
 </html>

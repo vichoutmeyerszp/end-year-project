@@ -20,7 +20,7 @@ function registerUser($connection, $voornaam, $achternaam, $email, $wachtwoord, 
     return $resultaat;
 }
 
-function updateUser($connection, $gebruikerid, $voornaam, $achternaam, $email, $wachtwoord, $profielfoto, $beschrijving) {
+function updateUser($connection, $gebruikerid, $voornaam, $achternaam, $wachtwoord, $profielfoto, $beschrijving) {
     if(empty($profielfoto)) {
         if(getProfilePicture($connection,$gebruikerid)){
             $profielfoto = getProfilePicture($connection,$gebruikerid);
@@ -29,12 +29,12 @@ function updateUser($connection, $gebruikerid, $voornaam, $achternaam, $email, $
         }
     }
     if(empty($wachtwoord)){
-        $sql = "UPDATE tblgebruikers set email = '" . $email . "', voornaam = '" . $voornaam . "', naam = '" . $achternaam . "', profielfoto = '" . $profielfoto . "', beschrijving = '" . $beschrijving . "' where gebruikerid = '" . $gebruikerid . "'";
+        $sql = "UPDATE tblgebruikers set voornaam = '" . $voornaam . "', naam = '" . $achternaam . "', profielfoto = '" . $profielfoto . "', beschrijving = '" . $beschrijving . "' where gebruikerid = '" . $gebruikerid . "'";
         return ($connection->query($sql));
     }else{
         $wachtwoord = convertPasswordToHash($wachtwoord);
 
-        return ($connection->query("UPDATE tblgebruikers set email = '" . $email . "', voornaam = '" . $voornaam . "', naam = '" . $achternaam . "',
+        return ($connection->query("UPDATE tblgebruikers set voornaam = '" . $voornaam . "', naam = '" . $achternaam . "',
         wachtwoord = '" . $wachtwoord . "', profielfoto = '" . $profielfoto . "', beschrijving = '" . $beschrijving . "' Where gebruikerid = '" . $gebruikerid . "'"));
     }
 }

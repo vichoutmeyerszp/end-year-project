@@ -50,6 +50,7 @@ export default class EnemyController {
         if (this.playerBulletController.collideWith(enemy)) {
           this.enemyDeathSound.currentTime = 0;
           this.enemyDeathSound.play();
+
           enemyRow.splice(enemyIndex, 1);
         }
       });
