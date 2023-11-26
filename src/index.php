@@ -13,6 +13,13 @@ include "components/navbar.php";
 
 <style>
 
+      h1 {
+        margin: 0px;
+        margin-bottom: 10px;
+        font-size: 2.9em;
+        font-family: "Helvetica";
+      }
+
       body {
         display: flex;
         align-items: center;
@@ -38,7 +45,7 @@ include "components/navbar.php";
   <div class="carousel-item h-full">
   <div class="card w-96 bg-[#D3D3D3]   shadow-xl">
 <div class="card-body items-center text-center">
-    <h2 class="card-title">Colors</h2>
+    <h1 class="card-title">Colors</h1>
   <figure class="px-10 pt-10">
     <img src="../public/importantimages/ColorGame.jpg" alt="Shoes" class="rounded-xl" />
   </figure>
@@ -61,7 +68,7 @@ include "components/navbar.php";
   <div class="carousel-item h-full">
   <div class="card w-96 bg-[#D3D3D3] shadow-xl">
 <div class="card-body items-center text-center">
- <h2 class="card-title">Space invaders</h2>
+ <h1 class="card-title">Space invaders</h1>
   <figure class="px-10 pt-10">
     <img src="../public/importantimages/Space_Invaders.png" alt="Space Invaders" class="rounded-xl" />
   </figure>

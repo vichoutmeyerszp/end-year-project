@@ -44,14 +44,8 @@
   <body>
   <body>
     <h1>Space Invaders</h1>
-    <h1 id="newGame" onclick="runGame()">Begin</h1>
     <canvas id="game" width="240" height="400">
     <script type="module" src="index.js"></script>
-    <script>
-      var runGame = function(){
-        document.getElementById("newGame").style.display = "none";
-      };
-    </script>
     
 </body>
 <html>  
