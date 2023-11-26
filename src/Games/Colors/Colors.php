@@ -1,13 +1,16 @@
-<html lang="en"><head>
+<html lang="en">
+    <head>
     <meta charset="UTF-8">
     <title>Color Guess</title>
     <link rel="stylesheet" href="Colors.css">
     <link rel="icon" href="fav.png">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Colors</title>
 </head>
 
 
 <body>
+
    <img src="data/Correct.png" alt="" id="checkmark">
    <img src="data/Wrong.png" alt="" id="wrong">
     <div class="top">
