@@ -10,6 +10,30 @@ session_start();
     <title>Profiel Bewerken</title>
 </head>
 
+
+<div class="flex justify-start items-start">
+            <a href="index.php" class="btn btn-ghost normal-case text-xl text-black">Game World</a> 
+          </div>
+<style>
+
+      body {
+        display: flex;
+        align-items: center;
+
+        flex-direction: column;
+        padding: 0px;
+        margin: 0px;
+        height: 100vh;
+        background: linear-gradient(
+          0deg,
+          rgb(97, 98, 99) 0%,
+          rgba(0, 0, 0, 0) 100%
+        );
+      }
+
+      
+    </style>
+
 <?php
 include "connect.php";
 include "functions/userFunctions.php";
@@ -54,9 +78,6 @@ if (isset($_POST["wijzigen"])) {
     foreach(getUser($mysqli,$_SESSION["login"]) as $row){
         print'<body>
         <div>
-          <div class="flex justify-start items-start">
-            <a href="index.php" class="btn btn-ghost normal-case text-xl text-black">Game World</a> 
-          </div>
           <form class="form-control h-full flex items-center justify-center" method="post" action="profielbewerken.php" enctype="multipart/form-data">
             <div class="card w-full max-w-lg shadow-2xl bg-white p-8 mx-auto justify-center items-center">
               <h2 class="text-black text-2xl mb-4">Bewerk Profiel</h2>
