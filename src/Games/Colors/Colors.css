@@ -8,6 +8,12 @@ body{
         rgba(0, 0, 0, 0) 100%
       );
 }
+
+a {
+    text-align: center;
+    margin: auto;
+}
+
 .bottom{
     display: flex;
 }

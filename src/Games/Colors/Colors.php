@@ -11,9 +11,9 @@
 
 <body>
 
-   <img src="data/Correct.png" alt="Correct" id="checkmark">
-   <img src="data/Wrong.png" alt="Wrong" id="wrong">
+
     <div class="top">
+       <a href="../../index.php">Game World</a>
        <button id="start" onclick="startGame()">Start</button>
         <div id="color1" class="colorText color1"></div>
         <div id="color2" class="colorText color2"></div>
@@ -30,6 +30,8 @@
     </div>
     <span id="correct"></span>
     <span id="time"></span>
+    <img src="data/Correct.png" alt="Correct" id="checkmark">
+   <img src="data/Wrong.png" alt="Wrong" id="wrong">
 
 <script src="Colors.js"></script>
 </body></html>
