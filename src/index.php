@@ -23,6 +23,7 @@ include "components/navbar.php";
       body {
         display: flex;
         align-items: center;
+
         flex-direction: column;
         padding: 0px;
         margin: 0px;
@@ -56,7 +57,7 @@ include "components/navbar.php";
           Info over het spel
            </div>
            <div class="collapse-content"> 
-             <p>In dit klein spelletje gaan we kijken of je jezelf niet kan mislopen. Je krijgt 2 woorden, en het is de bedoeling je in de 2 woorden de kleur vergelijking zoekt dat de 2 woorden geven. Veel succes!</p>
+             <p>In dit klein spelletje gaan we kijken of je jezelf niet kan mislopen. Je krijgt 2 woorden, en het is de bedoeling je in de 2 woorden de kleur vergelijking zoekt. Veel succes!</p>
             </div>
           </div>
     <div class="card-actions">
