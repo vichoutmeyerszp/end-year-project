@@ -62,7 +62,7 @@ function addFriend($connection, $gebruikerid, $vriendid, $voornaam, $naam){
     return $resultaat;
 }
 
-function showFriend($connection, $gebruikerid, $vriendid, $voornaam, $naam){
+function showFriend($connection, $gebruikerid){
     $resultaat = $connection->query("SELECT * FROM tblvrienden WHERE gebruikerid = '".$gebruikerid."' OR vriendid = '".$gebruikerid."'");
     return $resultaat;
 }
