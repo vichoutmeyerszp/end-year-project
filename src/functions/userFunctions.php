@@ -57,6 +57,15 @@ function getGebruikersid($connection,$email){
     return ($resultaat->num_rows == 0)?false:$resultaat->fetch_assoc()['gebruikerid'];
 }
 
+function addFriend($connection, $gebruikerid, $vriendid, $voornaam, $naam){
+    $resultaat = $connection->query("INSERT INTO tblgebruikers (email, voornaam, naam, wachtwoord, profielfoto, beschrijving) VALUES ('".$gebruikerid."','".$vriendid."','".$voornaam."','".$naam."')");
+    return $resultaat;
+}
+
+function showFriend($connection, $gebruikerid, $vriendid, $voornaam, $naam){
+    $resultaat = $connection->query("SELECT * FROM tblvrienden WHERE gebruikerid = '".$gebruikerid."' OR vriendid = '".$gebruikerid."'");
+    return $resultaat;
+}
 
 
 ?>
