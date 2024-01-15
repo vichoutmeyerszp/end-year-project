@@ -7,11 +7,12 @@
     <div id="theHead">Welcome to Tetris!</div>
     <div id="newGame" onclick="runGame()" onmouseover="this.style.backgroundColor = 'goldenrod'" onmouseout="this.style.backgroundColor = 'gold'">New Game</div>
     <div id="creditBtn" onmouseover="this.style.backgroundColor = 'goldenrod'" onmouseout="this.style.backgroundColor = 'gold'" onclick="showCredits()">Credits</div>
+    <a href="../../index.php" id="creditBtn" onmouseover="this.style.backgroundColor = 'goldenrod'" onmouseout="this.style.backgroundColor = 'gold'">Hoofdpagina</div>
     <div id="credits">Tetris: Made by Maya</div>
     <div id="backBtn" onmouseover="this.style.backgroundColor = 'goldenrod'" onmouseout="this.style.backgroundColor = 'gold'" onclick="goBack()">Back</div>
     <div id="main">
     <div id="score"></div>
-    <canvas id="tetris" width="240" height="400" />
+    <canvas id="tetris" width="240" height="400">
     </div>
     <script src="tetris.js"></script>
     <script>

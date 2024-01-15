@@ -48,7 +48,7 @@ include "components/navbar.php";
 <div class="card-body items-center text-center">
     <h1 class="card-title">Colors</h1>
   <figure class="px-10 pt-10">
-    <img src="../public/importantimages/ColorGame.jpg" alt="Shoes" class="rounded-xl" />
+    <img src="../public/importantimages/ColorGame.jpg" alt="ColorGame.jpg" class="rounded-xl" />
   </figure>
 
     <div class="collapse bg-base-200">
@@ -65,14 +65,18 @@ include "components/navbar.php";
     </div>
   </div>
 </div>
+
+
+
   </div> 
   <div class="carousel-item h-full">
   <div class="card w-96 bg-[#D3D3D3] shadow-xl">
 <div class="card-body items-center text-center">
  <h1 class="card-title">Space invaders</h1>
   <figure class="px-10 pt-10">
-    <img src="../public/importantimages/Space_Invaders.png" alt="Space Invaders" class="rounded-xl" />
+    <img src="../public/importantimages/Space_Invaders.png" alt="Space Invaders.png" class="rounded-xl" />
   </figure>
+
 
 
       <div class="collapse bg-base-200">
@@ -89,6 +93,35 @@ include "components/navbar.php";
     </div>
   </div>
 </div>
+
+
+</div> 
+  <div class="carousel-item h-full">
+  <div class="card w-96 bg-[#D3D3D3] shadow-xl">
+<div class="card-body items-center text-center">
+ <h1 class="card-title">Tetris</h1>
+  <figure class="px-10 pt-10">
+    <img src="../public/importantimages/Tetris.jpg" alt="Tetris.jpg" class="rounded-xl" />
+  </figure>
+
+
+      <div class="collapse bg-base-200">
+      <input type="checkbox" /> 
+       <div class="collapse-title text-xl font-medium">
+          Info over het spel
+           </div>
+           <div class="collapse-content"> 
+             <p>Welkom bij tetris. Dit spel gebruik al je brain-power. Bedenk een strategie voor be blokken, blijf kalm, en laat de blokken maar vallen!</p>
+            </div>
+          </div>
+    <div class="card-actions">
+      <a href="./Games/Tetris/tetris.php" class="btn btn-primary">Play now!</a>
+    </div>
+  </div>
+</div>
+
+
+
   </div> 
 </div>
 
