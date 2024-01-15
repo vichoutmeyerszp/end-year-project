@@ -111,11 +111,36 @@ include "components/navbar.php";
           Info over het spel
            </div>
            <div class="collapse-content"> 
-             <p>Welkom bij tetris. Dit spel gebruik al je brain-power. Bedenk een strategie voor be blokken, blijf kalm, en laat de blokken maar vallen!</p>
+             <p>Welkom bij Tetris. Dit spel gebruik al je brain-power. Bedenk een strategie voor be blokken, blijf kalm, en laat de blokken maar vallen!</p>
             </div>
           </div>
     <div class="card-actions">
       <a href="./Games/Tetris/tetris.php" class="btn btn-primary">Play now!</a>
+    </div>
+  </div>
+</div>
+
+</div> 
+  <div class="carousel-item h-full">
+  <div class="card w-96 bg-[#D3D3D3] shadow-xl">
+<div class="card-body items-center text-center">
+ <h1 class="card-title">Blad Steen Schaar</h1>
+  <figure class="px-10 pt-10">
+    <img src="../public/importantimages/BSC.jpg" alt="BSC.jpg" class="rounded-xl" />
+  </figure>
+
+
+      <div class="collapse bg-base-200">
+      <input type="checkbox" /> 
+       <div class="collapse-title text-xl font-medium">
+          Info over het spel
+           </div>
+           <div class="collapse-content"> 
+             <p>Vind je jezelf een gelukzak? Dat zal het spel wel bepalen. Hoeveel keer kan je winnen zonder te verliezen of gelijkspel te krijgen? </p>
+            </div>
+          </div>
+    <div class="card-actions">
+      <a href="./Games/BSC/BSC.php" class="btn btn-primary">Play now!</a>
     </div>
   </div>
 </div>
