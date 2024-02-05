@@ -3,10 +3,10 @@ include "./connect.php";
 include "./functions/userFunctions.php";
 session_start();
 ?>
-<div class="navbar bg-[#F8F8F8]">
-    <div class="navbar-start">
-        <a href="index.php" class="btn btn-ghost normal-case text-xl text-black">Game World</a>
-    </div>
+<div class="navbar bg-base-100">
+  <div class="flex-1">
+  <a href="index.php" class="btn btn-ghost normal-case text-xl text-black">Game World</a>
+  </div>
         <?php
         if (isset($_SESSION["login"])) {
 

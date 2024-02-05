@@ -56,9 +56,9 @@ if (!isset($_SESSION['user'])) {
                     <?php
                         $userid = $_SESSION['user']['id'];
                         $sql = mysqli_query($connection, "SELECT *
-                        FROM users
+                        FROM tblgebruikers
                         JOIN user_profile ON users.id = user_profile.userid
-                        WHERE users.id = $userid");
+                        WHERE gebruikerid = $userid");
                         if (mysqli_num_rows($sql) > 0) {
                             $row = mysqli_fetch_assoc($sql);
                         }
