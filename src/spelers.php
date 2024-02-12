@@ -11,38 +11,11 @@ include "components/navbar.php";
   <script src="https://cdn.tailwindcss.com"></script>
 </head>
 
-<style>
-
-      h1 {
-        margin: 0px;
-        margin-bottom: 10px;
-        font-size: 2.9em;
-        font-family: "Helvetica";
-      }
-
-      body {
-        display: flex;
-        align-items: center;
-
-        flex-direction: column;
-        padding: 0px;
-        margin: 0px;
-        height: 100vh;
-        background: linear-gradient(
-          0deg,
-          rgb(97, 98, 99) 0%,
-          rgba(0, 0, 0, 0) 100%
-        );
-      }
-
-      
-    </style>
-
 <body>
 
 
 <?php
-if (!isset($_SESSION['user'])) {
+if (!isset($_SESSION['login'])) {
     header('Location: index.php');
     return;
 }
@@ -54,29 +27,27 @@ if (!isset($_SESSION['user'])) {
             <section class="users">
                 <header>
                     <?php
-                        $userid = $_SESSION['user']['id'];
-                        $sql = mysqli_query($connection, "SELECT *
-                        FROM tblgebruikers
-                        JOIN user_profile ON users.id = user_profile.userid
-                        WHERE gebruikerid = $userid");
-                        if (mysqli_num_rows($sql) > 0) {
-                            $row = mysqli_fetch_assoc($sql);
-                        }
+                        foreach(getUsers($mysqli) as $row) {
                     ?>
                     <div class="content">
-                        <img src="/public/images/<?php echo $row['profilepicture'] ?>">
+                        <img src="/public/images/<?php echo $row['profielfoto'] ?>">
                         <div class="details">
-                            <span><?php echo $row['firstname'] . " " . $row['lastname'] ?></span>
+                            <span><?php echo $row['voornaam'] . " " . $row['naam'] ?></span>
                             <p class="status-dot">Online now</p>
+                            <a href="vriendverzoek.php?verzoek=">Vrienschapverzoek sturen</a>
                         </div>
                     </div>
                 </header>
                  <div class="users-list">
                 </div>
+                <?php
+}
+?>
             </section>
         </div>
     </div>
 </body>
+
 <style>
 *
 {

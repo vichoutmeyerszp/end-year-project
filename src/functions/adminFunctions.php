@@ -17,10 +17,21 @@ function getAnnouncements($connection) {
 function addAnnouncement($connection, $AnnouncementTitle, $AnnouncementText, $StartTime) {
         $resultaat = $connection->query("INSERT INTO tblannouncements (AnnouncementTitle, AnnouncementText, StartTime) VALUES ('".$AnnouncementTitle."','".$AnnouncementText."','".$StartTime."')");
         return $resultaat;
-    }
-    function checkIfAdmin($connection,$email){
+}
+    
+function checkIfAdmin($connection,$email){
         $resultaat = $connection->query("SELECT * FROM tblgebruikers where email = '".$email."' and admin=1");
         return ($resultaat->num_rows == 0)?false:$resultaat->fetch_all(MYSQLI_ASSOC);
+}
+
+function getUsers($connection) {
+        $resultaat = $connection->query("SELECT *
+        FROM tblgebruikers");
+        return $resultaat;
     }
+    
+
+
+    
 
 ?>

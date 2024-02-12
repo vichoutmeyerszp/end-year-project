@@ -1,6 +1,7 @@
 <?php
 include "./connect.php";
 include "./functions/userFunctions.php";
+include "./functions/adminFunctions.php";
 session_start();
 ?>
 <div class="navbar bg-base-100">
