@@ -34,11 +34,11 @@ include "functions/adminFunctions.php";
       
     </style>
 <body class="min-h-screen">
-    <div class="overflow-x-auto max-w-4xl mx-auto p-3">
+    <div class="overflow-x-auto min-w-fit mx-auto p-3">
         <table class="table bg-white shadow-lg">
             <thead>
                 <tr>
-                    <th>Announcements</th>
+                    <th class="text-center">Announcements</th>
                     <th class="text-center">Descriptie</th>
                     <th class="text-center">Aangemaakt Announcement</th>
                 </tr>
