@@ -16,7 +16,7 @@ function arenaSweep() {
         arena.unshift(row);
         ++y;
 
-        player.score += rowCount * 10;
+        player.score += rowCount * 100;
         rowCount *= 2;
     }
 }
@@ -218,10 +218,8 @@ document.addEventListener('keydown', event => {
         playerMove(1);
     } else if (event.keyCode === 40) {
         playerDrop();
-    } else if (event.keyCode === 81) {
+    } else if (event.code == "R") {
         playerRotate(-1);
-    } else if (event.keyCode === 87) {
-        playerRotate(1);
     }
 });
 

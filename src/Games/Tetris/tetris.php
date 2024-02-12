@@ -6,9 +6,9 @@
 <body>
     <div id="theHead">Welcome to Tetris!</div>
     <div id="newGame" onclick="runGame()" onmouseover="this.style.backgroundColor = 'goldenrod'" onmouseout="this.style.backgroundColor = 'gold'">New Game</div>
-    <div id="creditBtn" onmouseover="this.style.backgroundColor = 'goldenrod'" onmouseout="this.style.backgroundColor = 'gold'" onclick="showCredits()">Credits</div>
-    <a href="../../index.php" id="creditBtn" onmouseover="this.style.backgroundColor = 'goldenrod'" onmouseout="this.style.backgroundColor = 'gold'">Hoofdpagina</div>
-    <div id="credits">Tetris: Made by Maya</div>
+    <div id="creditBtn" onmouseover="this.style.backgroundColor = 'goldenrod'" onmouseout="this.style.backgroundColor = 'gold'" onclick="showControls()">Controls</div>
+    <a href="../../index.php" id="creditBtn" onmouseover="this.style.backgroundColor = 'goldenrod'" onmouseout="this.style.backgroundColor = 'gold'">Hoofdpagina</a>
+    <div id="credits">Klik de pijl naar beneden om het blok te laten zakken en R om het blok te draaien</div>
     <div id="backBtn" onmouseover="this.style.backgroundColor = 'goldenrod'" onmouseout="this.style.backgroundColor = 'gold'" onclick="goBack()">Back</div>
     <div id="main">
     <div id="score"></div>
@@ -27,7 +27,7 @@
         updateScore();
         update();
       };
-     var showCredits = function(){
+     var showControls = function(){
        document.getElementById("theHead").style.display = "none";
        document.getElementById("creditBtn").style.display = "none";
        document.getElementById("newGame").style.display = "none";
