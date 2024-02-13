@@ -30,7 +30,7 @@ if (!isset($_SESSION['login'])) {
                         foreach(getUsers($mysqli) as $row) {
                     ?>
                     <div class="content">
-                        <img src="/public/images/<?php echo $row['profielfoto'] ?>">
+                        <img src="../public/images/<?php echo $row['profielfoto'] ?>">
                         <div class="details">
                             <span><?php echo $row['voornaam'] . " " . $row['naam'] ?></span>
                             <p class="status-dot">Online now</p>
@@ -38,13 +38,17 @@ if (!isset($_SESSION['login'])) {
                         </div>
                     </div>
                 </header>
+
                  <div class="users-list">
-                </div>
-                <?php
+                    <br>
+                    <?php
 }
 ?>
+                </div>
+
             </section>
         </div>
+
     </div>
 </body>
 
@@ -59,7 +63,7 @@ if (!isset($_SESSION['login'])) {
 }
 .box
 {
-    padding-left: 35%;
+    padding-left: 44%;
 }
 .wrapper
 {
