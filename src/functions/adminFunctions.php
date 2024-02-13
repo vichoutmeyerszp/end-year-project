@@ -25,11 +25,19 @@ function checkIfAdmin($connection,$email){
 }
 
 function getUsers($connection) {
-        $resultaat = $connection->query("SELECT *
-        FROM tblgebruikers");
-        return $resultaat;
-    }
-    
+    $resultaat = $connection->query("SELECT * FROM tblgebruikers");
+    return $resultaat;
+}
+
+function addFriend($connection, $gebruikerid, $vriendid, $voornaam, $naam){
+    $resultaat = $connection->query("INSERT INTO tblgebruikers (email, voornaam, naam, wachtwoord, profielfoto, beschrijving) VALUES ('".$gebruikerid."','".$vriendid."','".$voornaam."','".$naam."')");
+    return $resultaat;
+}
+
+function showFriend($connection) {
+    $resultaat = $connection->query("SELECT * FROM tblgebruikers WHERE gebruiker1 = '".$_SESSION['login']."' OR gebruiker2 = '".$_SESSION['login']."'");
+    return $resultaat;
+}
 
 
     

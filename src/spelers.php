@@ -34,7 +34,9 @@ if (!isset($_SESSION['login'])) {
                         <div class="details">
                             <span><?php echo $row['voornaam'] . " " . $row['naam'] ?></span>
                             <p class="status-dot">Online now</p>
-                            <a href="vriendverzoek.php?verzoek=">Vrienschapverzoek sturen</a>
+                            <?php echo'
+                            <a href="vriendverzoek.php?verzoek='.$row['gebruikerid']. '">Vrienschapverzoek sturen</a>'
+                            ?>
                         </div>
                     </div>
                 </header>
