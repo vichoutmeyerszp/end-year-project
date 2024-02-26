@@ -30,27 +30,30 @@ if (!isset($_SESSION['login'])) {
                         foreach(getUsers($mysqli) as $row) {
                     ?>
                     <div class="content">
-                        <img src="../public/images/<?php echo $row['profielfoto'] ?>">
+                    <div class="users-list">
+                    <img src="../public/images/<?php echo $row['profielfoto'] ?>">
                         <div class="details">
                             <span><?php echo $row['voornaam'] . " " . $row['naam'] ?></span>
-                            <p class="status-dot">Online now</p>
                             <?php echo'
-                            <a href="vriendverzoek.php?verzoek='.$row['gebruikerid']. '">Vrienschapverzoek sturen</a>'
+                            <a href="vriendverzoek.php?verzoek='.$row['gebruikerid']. '" class="btn btn-active btn-accent">Vrienschapverzoek sturen</a>';
+
+                            if($_SESSION["admin"] = "true") {
+                                echo '<a href="verwijder.php?gebruiker='.$row['gebruikerid']. '" class="btn btn-error">Verwijder gebruiker</a>';
+                            };
+                        
+                            echo '
+                            <p>_̲_̲_̲_̲_̲_̲_̲_̲_̲_̲_̲_̲_̲_̲_̲_̲_̲_̲_̲_̲_̲_̲_̲_̲_̲_̲_̲_̲_̲_̲_̲_̲_̲_̲_̲_̲_̲_̲_̲_̲_̲_̲</p>
+                            <br>
+                            ';
                             ?>
+
                         </div>
-                    </div>
+                        <?php
+                        }   
+                        ?>
                 </header>
-
-                 <div class="users-list">
-                    <br>
-                    <?php
-}
-?>
-                </div>
-
             </section>
         </div>
-
     </div>
 </body>
 
@@ -65,7 +68,7 @@ if (!isset($_SESSION['login'])) {
 }
 .box
 {
-    padding-left: 44%;
+    padding-left: 40%;
 }
 .wrapper
 {
@@ -147,7 +150,7 @@ if (!isset($_SESSION['login'])) {
 }
 .users-list 
 {
-    max-height: 350px;
+    max-height: 600px;
     overflow-y: auto;
 }
 .users-list::-webkit-scrollbar

@@ -29,13 +29,18 @@ function getUsers($connection) {
     return $resultaat;
 }
 
-function addFriend($connection, $gebruikerid, $vriendid, $voornaam, $naam){
-    $resultaat = $connection->query("INSERT INTO tblgebruikers (email, voornaam, naam, wachtwoord, profielfoto, beschrijving) VALUES ('".$gebruikerid."','".$vriendid."','".$voornaam."','".$naam."')");
+function showFriend($connection) {
+    $resultaat = $connection->query("SELECT * FROM tblgebruikers WHERE gebruiker1 = '".$_SESSION['login']."' OR gebruiker2 = '".$_SESSION['login']."'");
     return $resultaat;
 }
 
-function showFriend($connection) {
-    $resultaat = $connection->query("SELECT * FROM tblgebruikers WHERE gebruiker1 = '".$_SESSION['login']."' OR gebruiker2 = '".$_SESSION['login']."'");
+function deleteUser($connection, $gebruikerid) {
+    $resultaat = $connection->query("DELETE FROM tblgebruikers where gebruikerid = '". $gebruikerid."'");
+    return $resultaat;
+}
+
+function deleteFriends($connection, $gebruikerid) {
+    $resultaat = $connection->query("DELETE FROM tblvrienden where gebruiker1 = '". $gebruikerid."' OR gebruiker2 = '". $gebruikerid."'");
     return $resultaat;
 }
 

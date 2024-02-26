@@ -1,6 +1,5 @@
 <?php
 include "components/navbar.php";
-include "functions/adminFunctions.php";
 
 
 ?>
@@ -46,7 +45,7 @@ include "functions/adminFunctions.php";
             <tbody>
                 <?php
 
-               if(!checkIfAdmin($mysqli, $_SESSION["login"])){
+               if(checkIfAdmin($mysqli, $_SESSION["login"])){
                 echo'
          
                 <button class="btn  hover:bg-[#000048] text-center" onclick="my_modal_1.showModal()">Voeg announcement Toe</button>
