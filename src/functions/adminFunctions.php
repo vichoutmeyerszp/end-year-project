@@ -18,6 +18,18 @@ function addAnnouncement($connection, $AnnouncementTitle, $AnnouncementText, $St
         $resultaat = $connection->query("INSERT INTO tblannouncements (AnnouncementTitle, AnnouncementText, StartTime) VALUES ('".$AnnouncementTitle."','".$AnnouncementText."','".$StartTime."')");
         return $resultaat;
 }
+
+function getGoals($connection) {
+    $resultaat = $connection->query("SELECT *
+    FROM tblgoals ORDER BY tblgoals.Goalid DESC");
+    return $resultaat;
+}
+
+function addGoal($connection, $GoalTitle, $Descriptie, $Prijs, $StartTime) {
+    $resultaat = $connection->query("INSERT INTO tblgoals (GoalTitle, Descriptie, Prijs, StartTime) VALUES ('".$GoalTitle."','".$Descriptie."','".$Prijs."','".$StartTime."')");
+    return $resultaat;
+}
+
     
 function checkIfAdmin($connection,$email){
         $resultaat = $connection->query("SELECT * FROM tblgebruikers where email = '".$email."' and admin=1");
@@ -43,6 +55,7 @@ function deleteFriends($connection, $gebruikerid) {
     $resultaat = $connection->query("DELETE FROM tblvrienden where gebruiker1 = '". $gebruikerid."' OR gebruiker2 = '". $gebruikerid."'");
     return $resultaat;
 }
+
 
 
     

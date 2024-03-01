@@ -35,7 +35,7 @@
 
     </a>
 
-    <p id="action">Probeer, als je durft...</p>
+    <p id="action">Reset de tekst hier om te herbeginnen</p>
 
 
     <script src="BSC.js"></script>
