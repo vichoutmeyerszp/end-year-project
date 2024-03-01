@@ -15,7 +15,7 @@
     </header>
     <div id="results">
         <p id="result">
-            Maak uw keuze
+            Maak uw keuze. Je kunt zoveel gaan als je wilt.
         </p>
     </div>
 

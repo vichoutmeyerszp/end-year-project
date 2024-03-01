@@ -26,6 +26,7 @@ session_start();
     </label>
     <ul tabindex="0" class="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-black text-white rounded-box w-52">
         <li><a href="announcement.php">Announcements</a></li>
+        <li><a href="announcementGoals.php">Goals</a></li>
         <li><a href="profielbewerken.php" class="justify-between">Profiel Bewerken</a></li>
         <li><a href="vrienden.php">vrienden</a></li>
         <li><a href="spelers.php">Andere spelers</a></li>
