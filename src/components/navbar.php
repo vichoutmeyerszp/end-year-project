@@ -4,9 +4,9 @@ include "./functions/userFunctions.php";
 include "./functions/adminFunctions.php";
 session_start();
 ?>
-<div class="navbar bg-base-100">
+<div class="navbar bg-black-100">
   <div class="flex-1">
-  <a href="index.php" class="btn btn-ghost normal-case text-xl text-black">Game World</a>
+  <a href="index.php" class="btn btn-ghost normal-case text-xl text-white">Game World</a>
   </div>
         <?php
         if (isset($_SESSION["login"])) {

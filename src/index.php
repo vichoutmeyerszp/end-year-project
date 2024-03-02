@@ -31,7 +31,7 @@ include "components/navbar.php";
         background: linear-gradient(
           0deg,
           rgb(97, 98, 99) 0%,
-          rgba(0, 0, 0, 0) 100%
+          rgba(0, 0, 0, 98) 100%
         );
       }
 
@@ -41,7 +41,7 @@ include "components/navbar.php";
 <body>
 
 
- 
+
 <div class="w-96 carousel rounded-box items-justify-center">
   <div class="carousel-item h-full">
   <div class="card w-96 bg-[#D3D3D3]   shadow-xl">

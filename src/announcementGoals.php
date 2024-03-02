@@ -53,7 +53,7 @@ include "components/navbar.php";
                 <dialog id="my_modal_1" class="modal">
                     <div class="modal-box">
                         <h3 class="font-bold text-lg">Geef hier je goal in</h3>
-                        <form class="form-control" method="post" action="announcementGoals.php">
+                        <form class="form-control flex items-center justify-center" method="post" action="announcementGoals.php">
                         <textarea class="textarea textarea-bordered h-18  text-black bg-white" name="titel" placeholder="Geef titel toe"></textarea>
                         <br><br>
                            <textarea class="textarea textarea-bordered h-24  text-black bg-white" name="Descriptie" placeholder="Geef descriptie toe"></textarea>

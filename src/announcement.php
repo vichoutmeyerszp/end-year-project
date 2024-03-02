@@ -26,7 +26,7 @@ include "components/navbar.php";
         background: linear-gradient(
           0deg,
           rgb(97, 98, 99) 0%,
-          rgba(0, 0, 0, 0) 100%
+          rgba(0, 0, 0, 98) 100%
         );
       }
 
@@ -45,10 +45,10 @@ include "components/navbar.php";
             <tbody>
                 <?php
 
-               if(checkIfAdmin($mysqli, $_SESSION["login"])){
+               if(!checkIfAdmin($mysqli, $_SESSION["login"])){
                 echo'
          
-                <button class="btn  hover:bg-[#000048] text-center" onclick="my_modal_1.showModal()">Voeg announcement Toe</button>
+                <button class="btn  hover:bg-[#000048] items justify-center text-center" onclick="my_modal_1.showModal()">Voeg announcement Toe</button>
                 <dialog id="my_modal_1" class="modal">
                     <div class="modal-box">
                         <h3 class="font-bold text-lg">Geef hier je announcement hier</h3>

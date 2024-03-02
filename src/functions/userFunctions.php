@@ -57,6 +57,15 @@ function getGebruikersid($connection,$email){
     return ($resultaat->num_rows == 0)?false:$resultaat->fetch_assoc()['gebruikerid'];
 }
 
+function addRequest($connection, $verzoeker, $ontvanger) {
+    $resultaat = $connection->query("INSERT INTO tblverzoeken (verzoeker, ontvanger) VALUES ('".$verzoeker."','".$ontvanger."')");
+    return $resultaat;
+}
+
+function showFriend($connection) {
+    $resultaat = $connection->query("SELECT * FROM tblgebruikers WHERE gebruiker1 = '".$_SESSION['login']."' OR gebruiker2 = '".$_SESSION['login']."'");
+    return $resultaat;
+}
 
 
 ?>

@@ -41,11 +41,6 @@ function getUsers($connection) {
     return $resultaat;
 }
 
-function showFriend($connection) {
-    $resultaat = $connection->query("SELECT * FROM tblgebruikers WHERE gebruiker1 = '".$_SESSION['login']."' OR gebruiker2 = '".$_SESSION['login']."'");
-    return $resultaat;
-}
-
 function deleteUser($connection, $gebruikerid) {
     $resultaat = $connection->query("DELETE FROM tblgebruikers where gebruikerid = '". $gebruikerid."'");
     return $resultaat;
@@ -56,8 +51,5 @@ function deleteFriends($connection, $gebruikerid) {
     return $resultaat;
 }
 
-
-
-    
 
 ?>
