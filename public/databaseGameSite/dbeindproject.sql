@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Generation Time: Nov 26, 2023 at 09:41 PM
+-- Generation Time: Mar 03, 2024 at 05:05 PM
 -- Server version: 8.0.31
 -- PHP Version: 8.0.26
 
@@ -34,7 +34,15 @@ CREATE TABLE IF NOT EXISTS `tblannouncements` (
   `AnnouncementText` text CHARACTER SET utf8mb3 COLLATE utf8mb3_general_ci NOT NULL,
   `StartTime` date NOT NULL,
   PRIMARY KEY (`Announcementid`)
-) ENGINE=MyISAM AUTO_INCREMENT=12 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=14 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+--
+-- Dumping data for table `tblannouncements`
+--
+
+INSERT INTO `tblannouncements` (`Announcementid`, `AnnouncementTitle`, `AnnouncementText`, `StartTime`) VALUES
+(13, 'e', 'e', '2024-03-02'),
+(12, 'Announcement test', 'Dit is een announcement, en hiernaast geeft het de datum dat de announcement gemaakt is', '2023-11-30');
 
 -- --------------------------------------------------------
 
@@ -53,15 +61,53 @@ CREATE TABLE IF NOT EXISTS `tblgebruikers` (
   `profielfoto` text CHARACTER SET utf8mb3 COLLATE utf8mb3_general_ci NOT NULL,
   `beschrijving` text CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
   PRIMARY KEY (`gebruikerid`)
-) ENGINE=MyISAM AUTO_INCREMENT=9 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=11 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --
 -- Dumping data for table `tblgebruikers`
 --
 
 INSERT INTO `tblgebruikers` (`gebruikerid`, `voornaam`, `naam`, `email`, `wachtwoord`, `admin`, `profielfoto`, `beschrijving`) VALUES
-(8, 'Vic', 'Houtmeyers', 'vichoutmeyers@gmail.com', '$2y$10$3fD9QD2EiaynvaEa9R7RwOkDk6cd7KjkAzZp.rChqIDVL7xgApvMq', 0, 'addfavorite.png', 'Bezoeker test'),
+(8, 'Vic', 'Houtmeyers', 'vichoutmeyers@gmail.com', '$2y$10$3fD9QD2EiaynvaEa9R7RwOkDk6cd7KjkAzZp.rChqIDVL7xgApvMq', 0, 'ninjaStar.jpg', 'Bezoeker test'),
+(9, 'Rustico', 'Houtmeyers', 'RusticKirby@fuckyou.hah', '$2y$10$okUC99n3XWfa.y0vlC0Xq..4G1LydKZq45pmhhY2Wl9zlm4tmnqoy', 0, 'ee_1_21.png', '123'),
+(10, 'Rustic', 'Ao', 'RusticKirby@fineIchange.better', '$2y$10$d5dd0QTUdlqJIgfKjTqsU.9l7.29HkVGSDt/XCH4yd42qD6xaf8ES', 0, 'ee_1_21.png', '123'),
 (7, 'Vic', 'Vic', 'vic@civ.vic', '$2y$10$5eHT2La0VSX7uz9ChJ3C1uLdfQMIyDrmqWFWrIYnxcrFEYJ5/gcGu', 0, 'Knipseaeaeaeael.PNG', 'admin test');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `tblverzoeken`
+--
+
+DROP TABLE IF EXISTS `tblverzoeken`;
+CREATE TABLE IF NOT EXISTS `tblverzoeken` (
+  `verzoekid` int NOT NULL AUTO_INCREMENT,
+  `verzoeker` int NOT NULL,
+  `ontvanger` int NOT NULL,
+  PRIMARY KEY (`verzoekid`)
+) ENGINE=MyISAM AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `tblvrienden`
+--
+
+DROP TABLE IF EXISTS `tblvrienden`;
+CREATE TABLE IF NOT EXISTS `tblvrienden` (
+  `vriendid` int NOT NULL AUTO_INCREMENT,
+  `gebruiker1` int NOT NULL,
+  `gebruiker2` int NOT NULL,
+  PRIMARY KEY (`vriendid`)
+) ENGINE=MyISAM AUTO_INCREMENT=91 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+--
+-- Dumping data for table `tblvrienden`
+--
+
+INSERT INTO `tblvrienden` (`vriendid`, `gebruiker1`, `gebruiker2`) VALUES
+(90, 10, 9),
+(89, 9, 10);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
