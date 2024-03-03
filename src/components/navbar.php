@@ -6,7 +6,7 @@ session_start();
 ?>
 <div class="navbar bg-black-100">
   <div class="flex-1">
-  <a href="index.php" class="btn btn-ghost normal-case text-xl text-white">Game World</a>
+  <a href="index.php" class="btn normal-case text-xl text-white">Game World</a>
   </div>
         <?php
         if (isset($_SESSION["login"])) {
@@ -27,15 +27,22 @@ session_start();
     <ul tabindex="0" class="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-black text-white rounded-box w-52">
         <li><a href="announcement.php">Announcements</a></li>
         <li><a href="announcementGoals.php">Goals</a></li>
-        <li><a href="profielbewerken.php" class="justify-between">Profiel Bewerken</a></li>
-        <li><a href="vrienden.php">vrienden</a></li>
-        <li><a href="spelers.php">Andere spelers</a></li>
+        <details open>
+            <summary>Profiel</summary>
+            <ul>
+                <li><a href="profielbewerken.php" class="justify-between text-xs"> -    Bewerken</a></li>
+                <li><a href="vrienden.php" class="justify-between text-xs"> -    Vrienden</a></li>
+                <li><a href="verzoeken.php" class="justify-between text-xs"> -    Verzoeken</a></li>
+                <li><a href="spelers.php" class="justify-between text-xs"> -    Spelers</a></li>
+            </ul>
+        </details>
+
         <li><a href="loguit.php">Uitloggen</a></li>
     </ul>
 </div>
 <?php
         } else {
-            print '<a href="login.php" class="btn btn-ghost text-black ml-2">login</a>';
+            print '<a href="login.php" class="btn text-white ml-2">login</a>';
         }
 ?>
 </div>

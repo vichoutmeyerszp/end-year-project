@@ -12,7 +12,7 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <title>Space Invaders</title>
     <link rel="shortcut icon" href="#" />
-        <a href="../../index.php" class="btn btn-ghost normal-case text-xl text-black">Game World</a>
+        <a href="../../index.php" class="btn btn-ghost normal-case text-xl text-white">Game World</a>
     <style>
       
       canvas {
@@ -34,7 +34,7 @@
         background: linear-gradient(
           0deg,
           rgb(97, 98, 99) 0%,
-          rgba(0, 0, 0, 0) 100%
+          rgba(0, 0, 0, 98) 100%
         );
       }
 
@@ -43,7 +43,7 @@
   </head>
   <body>
   <body>
-    <h1>Space Invaders</h1>
+    <h1 class="text-white">Space Invaders</h1>
     <canvas id="game" width="240" height="400">
     <script type="module" src="index.js"></script>
     

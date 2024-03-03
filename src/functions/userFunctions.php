@@ -44,11 +44,11 @@ function convertPasswordToHash($wachtwoord) {
     return $hashedwachtwoord;
 }
 function getUser($connection,$gebruikerid){
-    $resultaat = $connection->query("SELECT * FROM tblgebruikers where gebruikerid= '".$gebruikerid."'");
+    $resultaat = $connection->query("SELECT * FROM tblgebruikers where gebruikerid = '".$gebruikerid."'");
     return ($resultaat->num_rows == 0)?false:$resultaat->fetch_all(MYSQLI_ASSOC);
 }
 function getProfilePicture($connection,$gebruikerid){
-    $resultaat = $connection->query("SELECT * FROM tblgebruikers where gebruikerid= '".$gebruikerid."'");
+    $resultaat = $connection->query("SELECT * FROM tblgebruikers where gebruikerid = '".$gebruikerid."'");
     return ($resultaat->num_rows == 0)?false:$resultaat->fetch_assoc()['profielfoto'];
 }
 
@@ -62,10 +62,26 @@ function addRequest($connection, $verzoeker, $ontvanger) {
     return $resultaat;
 }
 
-function showFriend($connection) {
-    $resultaat = $connection->query("SELECT * FROM tblgebruikers WHERE gebruiker1 = '".$_SESSION['login']."' OR gebruiker2 = '".$_SESSION['login']."'");
+function getRequest($connection, $gebruikerid) {
+    $resultaat = $connection->query("SELECT * FROM tblgebruikers, tblverzoeken where ontvanger = '".$gebruikerid."'");
     return $resultaat;
 }
+
+function deleteRequest($connection, $verzoeker, $ontvanger) {
+    $resultaat = $connection->query("DELETE FROM tblverzoeken where verzoeker = '". $verzoeker."' AND ontvanger = '".$ontvanger."'");
+    return $resultaat;
+}
+
+function addFriend($connection, $gebruiker1, $gebruiker2) {
+    $resultaat = $connection->query("INSERT INTO tblvrienden (gebruiker1, gebruiker2) VALUES ('".$gebruiker1."','".$gebruiker2."')");
+    return $resultaat;
+}
+
+function showFriend($connection, $gebruikerid) {
+    $resultaat = $connection->query("SELECT * FROM tblgebruikers, tblvrienden WHERE gebruikerid = $gebruikerid AND gebruiker2 = $gebruikerid");
+    return $resultaat;
+}
+
 
 
 ?>

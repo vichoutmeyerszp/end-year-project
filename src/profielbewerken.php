@@ -26,8 +26,8 @@ session_start();
         height: 100vh;
         background: linear-gradient(
           0deg,
-          rgb(97, 98, 99) 0%,
-          rgba(0, 0, 0, 0) 100%
+          rgb(0, 0, 0) 0%,
+          rgba(77, 78, 79, 200) 100%
         );
       }
 
