@@ -67,6 +67,11 @@ function getRequest($connection, $gebruikerid) {
     return $resultaat;
 }
 
+function existingRequest($connection, $verzoeker, $ontvanger ) {
+    $resultaat = $connection->query("SELECT * FROM tblverzoeken WHERE verzoeker = $verzoeker AND ontvanger = $ontvanger");
+    return ($resultaat->num_rows == 0);
+}
+
 function deleteRequest($connection, $verzoeker, $ontvanger) {
     $resultaat = $connection->query("DELETE FROM tblverzoeken where verzoeker = '". $verzoeker."' AND ontvanger = '".$ontvanger."'");
     return $resultaat;
