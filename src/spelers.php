@@ -28,6 +28,7 @@ if (!isset($_SESSION['login'])) {
                 <header>
                     <?php
                         foreach(getUsers($mysqli) as $row) {
+                            if($row['gebruikerid'] != $_SESSION['login']) {
                     ?>
                     <div class="content">
                     <div class="users-list">
@@ -49,6 +50,7 @@ if (!isset($_SESSION['login'])) {
 
                         </div>
                         <?php
+                            }
                         } 
                         ?>
                     </div>

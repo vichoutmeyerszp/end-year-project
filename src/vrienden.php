@@ -27,7 +27,7 @@ if (!isset($_SESSION['login'])) {
             <section class="users">
                 <header>
                     <?php
-                        foreach(showFriend($mysqli, $_SESSION["login"] ) as $row) {
+                        foreach(showFriend($mysqli, $_SESSION['login']) as $row) {
                     ?>
                     <div class="content">
                     <div class="users-list">
