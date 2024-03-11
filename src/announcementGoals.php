@@ -46,7 +46,7 @@ include "components/navbar.php";
             <tbody>
                 <?php
 
-               if($_SESSION["admin"] = "true"){
+               if(isset($_SESSION["admin"])){
                 echo'
          
                 <button class="btn  hover:bg-[#000048] text-center" onclick="my_modal_1.showModal()">Voeg Goal Toe</button>

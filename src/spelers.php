@@ -45,7 +45,7 @@ if (!isset($_SESSION['login'])) {
                             }
 
 
-                            if($_SESSION["admin"] = "true") {
+                            if(isset($_SESSION["admin"])){
                                 echo '<a href="verwijder.php?gebruiker='.$row['gebruikerid']. '" class="btn btn-error">Verwijder gebruiker</a>';
                             };
                         

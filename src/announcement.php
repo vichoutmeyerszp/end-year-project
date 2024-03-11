@@ -45,7 +45,7 @@ include "components/navbar.php";
             <tbody>
                 <?php
 
-               if(!checkIfAdmin($mysqli, $_SESSION["login"])){
+               if(isset($_SESSION["admin"])){
                 echo'
          
                 <button class="btn  hover:bg-[#000048] items justify-center text-center" onclick="my_modal_1.showModal()">Voeg announcement Toe</button>
