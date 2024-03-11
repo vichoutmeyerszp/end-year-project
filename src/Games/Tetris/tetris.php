@@ -12,8 +12,7 @@
       <br>
       Klik op R om het blok te laten draaien.
       <br>
-      <br>
-      Haal zoveel mogelijk punten als je kan.
+      Haal bonus punten door meerdere rijen te verwijderen met dezelfde blok.
     </div>
     <div id="backBtn" onmouseover="this.style.backgroundColor = 'goldenrod'" onmouseout="this.style.backgroundColor = 'gold'" onclick="goBack()">Back</div>
     <div id="main">

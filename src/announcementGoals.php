@@ -40,7 +40,7 @@ include "components/navbar.php";
                     <th class="text-center">Goal</th>
                     <th class="text-center">Descriptie</th>
                     <th class="text-center">Prijs</th>
-                    <th class="text-center">Tijdstip</th>
+                    <th class="text-center">Aangemaakt Goal</th>
                 </tr>
             </thead>
             <tbody>
