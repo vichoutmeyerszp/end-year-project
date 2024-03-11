@@ -1,6 +1,5 @@
 <?php
 include "components/navbar.php";
-var_dump($_SESSION['admin'])
 ?>
 <!DOCTYPE html>
 <html>

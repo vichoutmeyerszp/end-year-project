@@ -8,7 +8,13 @@
     <div id="newGame" onclick="runGame()" onmouseover="this.style.backgroundColor = 'goldenrod'" onmouseout="this.style.backgroundColor = 'gold'">New Game</div>
     <div id="creditBtn" onmouseover="this.style.backgroundColor = 'goldenrod'" onmouseout="this.style.backgroundColor = 'gold'" onclick="showControls()">Controls</div>
     <a href="../../index.php" id="creditBtn" onmouseover="this.style.backgroundColor = 'goldenrod'" onmouseout="this.style.backgroundColor = 'gold'">Hoofdpagina</a>
-    <div id="credits">Klik de pijl naar beneden om het blok te laten zakken en R om het blok te draaien</div>
+    <div id="credits">Klik de pijl naar beneden om het blok te laten zakken.
+      <br>
+      Klik op R om het blok te laten draaien.
+      <br>
+      <br>
+      Haal zoveel mogelijk punten als je kan.
+    </div>
     <div id="backBtn" onmouseover="this.style.backgroundColor = 'goldenrod'" onmouseout="this.style.backgroundColor = 'gold'" onclick="goBack()">Back</div>
     <div id="main">
     <div id="score"></div>

@@ -25,7 +25,7 @@ include "components/navbar.php";
         height: 100vh;
         background: linear-gradient(
           0deg,
-          rgb(97, 98, 99) 0%,
+          rgb(120, 120, 120) 0%,
           rgba(0, 0, 0, 0) 100%
         );
       }
