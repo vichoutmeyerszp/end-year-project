@@ -20,14 +20,12 @@ include "components/navbar.php";
         font-family: "Helvetica";
       }
 
-      body {
+        body {
         display: flex;
-        align-items: center;
+         /*  align-items: center;*/
 
         flex-direction: column;
-        padding: 0px;
-        margin: 0px;
-        height: 100vh;
+        height: 150vh;
         background-color: rgb(24, 24, 24);
       }
 
@@ -38,10 +36,12 @@ include "components/navbar.php";
 
 
 
-<div class="w-96 carousel rounded-box items-justify-center">
-  <div class="carousel-item h-full">
-  <div class="card w-96 bg-[#D3D3D3]   shadow-xl">
-<div class="card-body items-center text-center">
+
+
+<div class="carousel w-124 p-4 space-x-4 bg-neutral rounded-box">
+  <div class="carousel-item h-104 p-54  p-200">
+  <div class="card w-96 bg-[#D3D3D3] shadow-xl">
+ <div class="card-body items-center text-center">
     <h1 class="card-title">Colors</h1>
   <figure class="px-10 pt-10">
     <img src="../public/importantimages/ColorGame.jpg" alt="ColorGame.jpg" class="rounded-xl" />
@@ -60,12 +60,12 @@ include "components/navbar.php";
     <a href="./Games/Colors/Colors.php" class="btn btn-primary">Play now!</a>
     </div>
   </div>
-</div>
+ </div>
 
-
+ <br>
 
   </div> 
-  <div class="carousel-item h-full">
+  <div class="carousel-item h-104 scroll-px-56">
   <div class="card w-96 bg-[#D3D3D3] shadow-xl">
 <div class="card-body items-center text-center">
  <h1 class="card-title">Space invaders</h1>
@@ -89,10 +89,10 @@ include "components/navbar.php";
     </div>
   </div>
 </div>
-
-
 </div> 
-  <div class="carousel-item h-full">
+
+
+  <div class="carousel-item h-104">
   <div class="card w-96 bg-[#D3D3D3] shadow-xl">
 <div class="card-body items-center text-center">
  <h1 class="card-title">Tetris</h1>
@@ -116,8 +116,10 @@ include "components/navbar.php";
   </div>
 </div>
 
+<br>
+
 </div> 
-  <div class="carousel-item h-full">
+  <div class="carousel-item h-104">
   <div class="card w-96 bg-[#D3D3D3] shadow-xl">
 <div class="card-body items-center text-center">
  <h1 class="card-title">Blad Steen Schaar</h1>
@@ -139,7 +141,8 @@ include "components/navbar.php";
       <a href="./Games/BSC/BSC.php" class="btn btn-primary">Play now!</a>
     </div>
   </div>
-</div>
+    </div>
+
 
 
 <?php
