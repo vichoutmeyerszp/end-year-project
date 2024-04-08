@@ -88,7 +88,8 @@ function showFriend($connection, $gebruikerid) {
 }
 
 function addReview($connection, $reviewerid, $spel, $feedback) {
-    $resultaat = $connection->("INSERT INTO tblreviews (reviewerid, spel, feedback) VALUES ('".$reviewerid."','".$spel."', '".$feedback."')")
+    $resultaat = $connection->query("INSERT INTO tblreviews (reviewerid, spel, feedback) VALUES ('".$reviewerid."','".$spel."', '".$feedback."')");
+    return $resultaat;
 }
 
 
