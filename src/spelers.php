@@ -28,16 +28,24 @@ if (!isset($_SESSION['login'])) {
                 <header>
                     <?php
                         foreach(getUsers($mysqli) as $row) {
+                            if($row['gebruikerid'] != $_SESSION['login']) {
                     ?>
                     <div class="content">
                     <div class="users-list">
                     <img src="../public/images/<?php echo $row['profielfoto'] ?>">
                         <div class="details">
                             <span><?php echo $row['voornaam'] . " " . $row['naam'] ?></span>
-                            <?php echo'
-                            <a href="vriendschapverzoek.php?verzoek='.$row['gebruikerid']. '" class="btn btn-active btn-accent">Vrienschapverzoek sturen</a>';
+                            <?php if(!existingRequest($mysqli, $_SESSION['login'], $row['gebruikerid'])) { 
+                                echo'
+                                <input value="Verzoek gestuurd" class="input input-bordered w-full max-w-md text-black bg-white" disabled/><br><br>';
+                            }
+                            else {
+                                echo'
+                                <a href="vriendschapverzoek.php?verzoek='.$row['gebruikerid']. '" class="btn btn-active btn-accent">Vrienschapverzoek sturen</a>';
+                            }
 
-                            if($_SESSION["admin"] = "true") {
+
+                            if(isset($_SESSION["admin"])){
                                 echo '<a href="verwijder.php?gebruiker='.$row['gebruikerid']. '" class="btn btn-error">Verwijder gebruiker</a>';
                             };
                         
@@ -49,6 +57,7 @@ if (!isset($_SESSION['login'])) {
 
                         </div>
                         <?php
+                            }
                         } 
                         ?>
                     </div>

@@ -31,7 +31,7 @@ include "components/navbar.php";
         background-color: rgb(24, 24, 24);
       }
 
-      
+    
     </style>
 
 <body>
@@ -142,7 +142,9 @@ include "components/navbar.php";
 </div>
 
 
+<?php
 
+?>
   </div> 
 </div>
 

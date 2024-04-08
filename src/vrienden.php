@@ -27,7 +27,7 @@ if (!isset($_SESSION['login'])) {
             <section class="users">
                 <header>
                     <?php
-                        foreach(showFriend($mysqli, $_SESSION["login"] ) as $row) {
+                        foreach(showFriend($mysqli, $_SESSION['login']) as $row) {
                     ?>
                     <div class="content">
                     <div class="users-list">
@@ -36,6 +36,8 @@ if (!isset($_SESSION['login'])) {
                             <span><?php echo $row['voornaam'] . " " . $row['naam'] ?></span>
                             <?php
                             echo '
+                            <a href="Chat.php?vriend='.$row['gebruikerid'].'" class="btn btn-ghost text-black hover:text-white hover:bg-black">Chatten</a>  
+                            <a href="vriendVerwijderen.php?vriend='.$row['gebruikerid'].'"  class="btn btn-ghost text-black hover:text-white hover:bg-red-200">Verwijder vriend</a>
                             <p>_̲_̲_̲_̲_̲_̲_̲_̲_̲_̲_̲_̲_̲_̲_̲_̲_̲_̲_̲_̲_̲_̲_̲_̲_̲_̲_̲_̲_̲_̲_̲_̲_̲_̲_̲_̲_̲_̲_̲_̲_̲_̲</p>
                             <br>
                             ';

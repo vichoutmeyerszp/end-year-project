@@ -25,7 +25,7 @@ include "components/navbar.php";
         height: 100vh;
         background: linear-gradient(
           0deg,
-          rgb(97, 98, 99) 0%,
+          rgb(120, 120, 120) 0%,
           rgba(0, 0, 0, 0) 100%
         );
       }
@@ -40,13 +40,13 @@ include "components/navbar.php";
                     <th class="text-center">Goal</th>
                     <th class="text-center">Descriptie</th>
                     <th class="text-center">Prijs</th>
-                    <th class="text-center">Tijdstip</th>
+                    <th class="text-center">Aangemaakt Goal</th>
                 </tr>
             </thead>
             <tbody>
                 <?php
 
-               if($_SESSION["admin"] = "true"){
+               if(isset($_SESSION["admin"])){
                 echo'
          
                 <button class="btn  hover:bg-[#000048] text-center" onclick="my_modal_1.showModal()">Voeg Goal Toe</button>

@@ -63,8 +63,13 @@ function addRequest($connection, $verzoeker, $ontvanger) {
 }
 
 function getRequest($connection, $gebruikerid) {
-    $resultaat = $connection->query("SELECT * FROM tblgebruikers, tblverzoeken where ontvanger = '".$gebruikerid."'");
+    $resultaat = $connection->query("SELECT * FROM tblverzoeken INNER JOIN tblgebruikers ON tblverzoeken.verzoeker = tblgebruikers.gebruikerid WHERE ontvanger = '".$gebruikerid."'");
     return $resultaat;
+}
+
+function existingRequest($connection, $verzoeker, $ontvanger ) {
+    $resultaat = $connection->query("SELECT * FROM tblverzoeken WHERE verzoeker = $verzoeker AND ontvanger = $ontvanger");
+    return ($resultaat->num_rows == 0);
 }
 
 function deleteRequest($connection, $verzoeker, $ontvanger) {
@@ -78,7 +83,7 @@ function addFriend($connection, $gebruiker1, $gebruiker2) {
 }
 
 function showFriend($connection, $gebruikerid) {
-    $resultaat = $connection->query("SELECT * FROM tblgebruikers, tblvrienden WHERE gebruikerid = $gebruikerid AND gebruiker2 = $gebruikerid");
+    $resultaat = $connection->query("SELECT * FROM tblvrienden INNER JOIN tblgebruikers ON tblvrienden.gebruiker2 = tblgebruikers.gebruikerid WHERE gebruiker1 = $gebruikerid");
     return $resultaat;
 }
 
