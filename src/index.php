@@ -25,10 +25,13 @@ include "components/navbar.php";
          /*  align-items: center;*/
 
         flex-direction: column;
-        height: 150vh;
+        height: 125vh;
         background-color: rgb(24, 24, 24);
       }
-
+      img {
+        height: 200;
+        width: 300;
+      }
     
     </style>
 
@@ -44,7 +47,7 @@ include "components/navbar.php";
  <div class="card-body items-center text-center">
     <h1 class="card-title">Colors</h1>
   <figure class="px-10 pt-10">
-    <img src="../public/importantimages/ColorGame.jpg" alt="ColorGame.jpg" class="rounded-xl" />
+    <img src="../public/importantimages/ColorGame.jpg" alt="ColorGame.jpg" height="250" width="400"  class="rounded-xl" />
   </figure>
 
     <div class="collapse bg-base-200">
@@ -70,7 +73,7 @@ include "components/navbar.php";
 <div class="card-body items-center text-center">
  <h1 class="card-title">Space invaders</h1>
   <figure class="px-10 pt-10">
-    <img src="../public/importantimages/Space_Invaders.png" alt="Space Invaders.png" class="rounded-xl" />
+    <img src="../public/importantimages/Space_Invaders.png" alt="Space Invaders.png" height="250" width="400"  class="rounded-xl" />
   </figure>
 
 
@@ -97,7 +100,7 @@ include "components/navbar.php";
 <div class="card-body items-center text-center">
  <h1 class="card-title">Tetris</h1>
   <figure class="px-10 pt-10">
-    <img src="../public/importantimages/Tetris.jpg" alt="Tetris.jpg" class="rounded-xl" />
+    <img src="../public/importantimages/Tetris.jpg" alt="Tetris.jpg" height="250" width="400"  class="rounded-xl" />
   </figure>
 
 
@@ -124,7 +127,7 @@ include "components/navbar.php";
 <div class="card-body items-center text-center">
  <h1 class="card-title">Blad Steen Schaar</h1>
   <figure class="px-10 pt-10">
-    <img src="../public/importantimages/BSC.jpg" alt="BSC.jpg" class="rounded-xl" />
+    <img src="../public/importantimages/BSC.jpg"  height="800" width="1000" alt="BSC.jpg" class="rounded-xl" />
   </figure>
 
 
