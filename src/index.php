@@ -1,5 +1,6 @@
 <?php
 include "components/navbar.php";
+include "./functions/maintenanceFunctions.php";
 ?>
 <!DOCTYPE html>
 <html>
@@ -39,8 +40,6 @@ include "components/navbar.php";
 
 
 
-
-
 <div class="carousel w-124 p-4 space-x-4 bg-neutral rounded-box">
   <div class="carousel-item h-104 p-54  p-200">
   <div class="card w-96 bg-[#D3D3D3] shadow-xl">
@@ -60,7 +59,21 @@ include "components/navbar.php";
             </div>
           </div>
     <div class="card-actions">
-    <a href="./Games/Colors/Colors.php" class="btn btn-primary">Play now!</a>
+    <?php
+
+      if(checkmaintenanceColors($mysqli) == "0") {
+      echo' <a href="./Games/Colors/Colors.php" class="btn btn-primary">Play now!</a>';
+      if(isset($_SESSION['admin']) == "true") {
+      echo' <a href="tblMaintenance.php?enableColor" class="btn btn-error">Set Maintenance</a>';
+      }
+    }
+      else {
+        echo'<input type="email" name="email" value="In onderhoud..."  class="input input-bordered w-full max-w-md text-black bg-white items-center text-center" disabled/>';
+        if(isset($_SESSION['admin']) == "true") {
+         echo' <a href="tblMaintenance.php?disableColor" class="btn btn-success">Disable Maintenance</a>';
+      }
+    }
+    ?>
     </div>
   </div>
  </div>
@@ -88,7 +101,21 @@ include "components/navbar.php";
             </div>
           </div>
     <div class="card-actions">
-      <a href="./Games/SpaceInvaders/SpaceInvaders_Menu.php" class="btn btn-primary">Play now!</a>
+    <?php
+if(checkmaintenanceSpaceInvaders($mysqli) == "0") {
+echo' <a href="./Games/SpaceInvaders/SpaceInvaders_Menu.php" class="btn btn-primary">Play now!</a>';
+if(isset($_SESSION['admin']) == "true") {
+echo' <a href="tblMaintenance.php?enableSpaceInvaders" class="btn btn-error">Set Maintenance</a>';
+}
+}
+else {
+  echo'<input type="email" name="email" value="In onderhoud..."  class="input input-bordered w-full max-w-md text-black bg-white items-center text-center" disabled/>';
+  if(isset($_SESSION['admin']) == "true") {
+   echo' <a href="tblMaintenance.php?disableSpaceInvaders" class="btn btn-success">Disable Maintenance</a>';
+}
+}
+?>
+      
     </div>
   </div>
 </div>
@@ -114,7 +141,22 @@ include "components/navbar.php";
             </div>
           </div>
     <div class="card-actions">
-      <a href="./Games/Tetris/tetris.php" class="btn btn-primary">Play now!</a>
+    <?php
+
+if(checkmaintenanceTetris($mysqli) == "0") {
+echo' <a href="./Games/Tetris/tetris.php" class="btn btn-primary">Play now!</a>';
+if(isset($_SESSION['admin']) == "true") {
+echo' <a href="tblMaintenance.php?enableTetris" class="btn btn-error">Set Maintenance</a>';
+}
+}
+else {
+  echo'<input type="email" name="email" value="In onderhoud..."  class="input input-bordered w-full max-w-md text-black bg-white items-center text-center" disabled/>';
+  if(isset($_SESSION['admin']) == "true") {
+   echo' <a href="tblMaintenance.php?disableTetris" class="btn btn-success">Disable Maintenance</a>';
+}
+}
+?>
+
     </div>
   </div>
 </div>
@@ -141,7 +183,22 @@ include "components/navbar.php";
             </div>
           </div>
     <div class="card-actions">
-      <a href="./Games/BSC/BSC.php" class="btn btn-primary">Play now!</a>
+    <?php
+
+if(checkmaintenanceTetris($mysqli) == "0") {
+echo' <a href="./Games/BSC/BSC.php" class="btn btn-primary">Play now!</a></a>';
+if(isset($_SESSION['admin']) == "true") {
+echo' <a href="tblMaintenance.php?enableBSC" class="btn btn-error">Set Maintenance</a>';
+}
+}
+else {
+  echo'<input type="email" name="email" value="In onderhoud..."  class="input input-bordered w-full max-w-md text-black bg-white items-center text-center" disabled/>';
+  if(isset($_SESSION['admin']) == "true") {
+   echo' <a href="tblMaintenance.php?disableBSC" class="btn btn-success">Disable Maintenance</a>';
+}
+}
+?>
+
     </div>
   </div>
     </div>
