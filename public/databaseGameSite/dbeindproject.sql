@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Gegenereerd op: 05 mrt 2024 om 10:26
+-- Gegenereerd op: 22 apr 2024 om 16:17
 -- Serverversie: 10.4.28-MariaDB
 -- PHP-versie: 8.2.4
 
@@ -67,7 +67,6 @@ CREATE TABLE `tblgebruikers` (
 --
 
 INSERT INTO `tblgebruikers` (`gebruikerid`, `voornaam`, `naam`, `email`, `wachtwoord`, `admin`, `profielfoto`, `beschrijving`) VALUES
-(8, 'Vic', 'Houtmeyers', 'vichoutmeyers@gmail.com', '$2y$10$3fD9QD2EiaynvaEa9R7RwOkDk6cd7KjkAzZp.rChqIDVL7xgApvMq', 0, 'yeet1.png', 'Bezoeker test'),
 (11, 'Alsa', 'Olsa', 'AlsoOlsa@gmail.com', '$2y$10$dXj.ObQhc21d7ptSTkSAUuPN5nVdtqhaMatligZy2nMq.bzUyPiLi', 0, '16069142702581.png', 'Hallo :D'),
 (9, 'cédric', 'verlinden', 'gezgdshehqhqrqhjreqjj@a.a', '$2y$10$pAg3ijKIlFztfww/3SNP1OGyxzV5fVnkiBFYq47Gw.BW.2akR.Km.', 1, 'images1.jpg', '123'),
 (12, 'Olqio', 'Ceronoir', 'OlqioCeronoir@gmail.com', '$2y$10$BSpIRmSIvDWNRne85NvaY.Sri2LFRoDfMhL9yFAr7YCmkO185rzzq', 0, 'ninjaStar.jpg', 'DIt is een account tester');
@@ -91,9 +90,30 @@ CREATE TABLE `tblgoals` (
 --
 
 INSERT INTO `tblgoals` (`Goalid`, `GoalTitle`, `Descriptie`, `Prijs`, `StartTime`) VALUES
-(1, '0', '0', '0', '0000-00-00'),
 (2, 'Haal 5000 points in Tetris', 'Vandaag moet je het doen', '€5.00', '2024-03-01'),
-(3, '5', 'aagag', '600', '2024-03-01');
+(4, 'Beat Space Invaders 3 times in a row', 'Template', 'Special tag next to your name', '2024-03-11'),
+(5, 'Template', 'Template', 'SPecial tag', '2024-03-11');
+
+-- --------------------------------------------------------
+
+--
+-- Tabelstructuur voor tabel `tblmaintenance`
+--
+
+CREATE TABLE `tblmaintenance` (
+  `Colors` tinyint(1) NOT NULL,
+  `SpaceInvaders` tinyint(1) NOT NULL,
+  `Tetris` tinyint(1) NOT NULL,
+  `BSC` tinyint(1) NOT NULL,
+  `Snake` tinyint(1) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Gegevens worden geëxporteerd voor tabel `tblmaintenance`
+--
+
+INSERT INTO `tblmaintenance` (`Colors`, `SpaceInvaders`, `Tetris`, `BSC`, `Snake`) VALUES
+(1, 0, 0, 0, 0);
 
 -- --------------------------------------------------------
 
@@ -106,14 +126,6 @@ CREATE TABLE `tblverzoeken` (
   `verzoeker` int(11) NOT NULL,
   `ontvanger` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Gegevens worden geëxporteerd voor tabel `tblverzoeken`
---
-
-INSERT INTO `tblverzoeken` (`verzoekid`, `verzoeker`, `ontvanger`) VALUES
-(4, 12, 8),
-(5, 12, 11);
 
 -- --------------------------------------------------------
 
@@ -132,12 +144,8 @@ CREATE TABLE `tblvrienden` (
 --
 
 INSERT INTO `tblvrienden` (`vriendid`, `gebruiker1`, `gebruiker2`) VALUES
-(1, 11, 9),
-(2, 9, 11),
-(3, 11, 12),
-(4, 12, 11),
-(5, 9, 12),
-(6, 12, 9);
+(13, 11, 12),
+(14, 12, 11);
 
 --
 -- Indexen voor geëxporteerde tabellen
@@ -193,19 +201,19 @@ ALTER TABLE `tblgebruikers`
 -- AUTO_INCREMENT voor een tabel `tblgoals`
 --
 ALTER TABLE `tblgoals`
-  MODIFY `Goalid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `Goalid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT voor een tabel `tblverzoeken`
 --
 ALTER TABLE `tblverzoeken`
-  MODIFY `verzoekid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `verzoekid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 
 --
 -- AUTO_INCREMENT voor een tabel `tblvrienden`
 --
 ALTER TABLE `tblvrienden`
-  MODIFY `vriendid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `vriendid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
