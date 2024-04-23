@@ -197,6 +197,49 @@ else {
    echo' <a href="tblMaintenance.php?disableBSC" class="btn btn-success">Disable Maintenance</a>';
 }
 }
+
+?>
+    </div>
+  </div>
+</div>
+
+<br>
+
+</div>
+
+<div class="carousel-item h-104">
+<div class="card w-96 bg-[#D3D3D3] shadow-xl">
+<div class="card-body items-center text-center">
+<h1 class="card-title">Snake</h1>
+<figure class="px-10 pt-10">
+  <img src="../public/importantimages/Snake.jpg"  height="800" width="1000" alt="Snake.jpg" class="rounded-xl" />
+</figure>
+
+
+    <div class="collapse bg-base-200">
+    <input type="checkbox" /> 
+     <div class="collapse-title text-xl font-medium">
+        Info over het spel
+         </div>
+         <div class="collapse-content"> 
+           <p>Vind je jezelf een gelukzak? Dat zal het spel wel bepalen. Hoeveel keer kan je winnen zonder te verliezen of gelijkspel te krijgen? </p>
+          </div>
+        </div>
+  <div class="card-actions">
+  <?php
+
+if(checkmaintenanceSnake($mysqli) == "0") {
+echo' <a href="./Games/Snake/Snake.php" class="btn btn-primary">Play now!</a></a>';
+if(isset($_SESSION['admin']) == "true") {
+echo' <a href="tblMaintenance.php?enableSnake" class="btn btn-error">Set Maintenance</a>';
+}
+}
+else {
+echo'<input type="email" name="email" value="In onderhoud..."  class="input input-bordered w-full max-w-md text-black bg-white items-center text-center" disabled/>';
+if(isset($_SESSION['admin']) == "true") {
+ echo' <a href="tblMaintenance.php?disableSnake" class="btn btn-success">Disable Maintenance</a>';
+}
+}
 ?>
 
     </div>
