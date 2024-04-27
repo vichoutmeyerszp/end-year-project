@@ -27,7 +27,7 @@ const sendRequest = async (url, formData) => {
 sendBtn.onclick = async () => {
     const formData = new FormData(form);
     try {
-        await sendRequest("/src/lib/chats/insert-chat.php", formData);
+        await sendRequest("components/Chat/insert-chat.php", formData);
         inputField.value = "";
         scrollToBottom();
     } catch (error) {
@@ -46,7 +46,7 @@ chatBox.onmouseleave = () => {
 setInterval(async () => {
     const formData = new FormData(form);
     try {
-        const data = await sendRequest("/src/lib/chats/get-chat.php", formData);
+        const data = await sendRequest("components/Chat/get-chat.php", formData);
         chatBox.innerHTML = data;
         if (!chatBox.classList.contains("active")) {
             scrollToBottom();

@@ -1,7 +1,7 @@
 <?php 
 include "components/navbar.php";
 
-
+// shout-out to Cedric for letting me borrow the code for the most part 👍
 ?>
 
 <link href="https://cdn.jsdelivr.net/npm/daisyui@3.7.4/dist/full.css" rel="stylesheet" type="text/css" />
@@ -14,7 +14,7 @@ include "components/navbar.php";
                 <header>
                     <?php
                         $gebruikersid = $_SESSION['login'];
-                        if($_GET['vriend']) {
+                        if(isset($_GET['vriend'])) {
                          $_SESSION['vriend'] = mysqli_real_escape_string($mysqli, $_GET['vriend']);
                         }
                         $vriendid = $_SESSION['vriend'];
@@ -48,7 +48,7 @@ include "components/navbar.php";
         </div>
 </div>
 
-<script src="/public/js/chat.js"></script>
+<script src="components/Chat/chat.js"></script>
 
 </body>
 

@@ -1,15 +1,15 @@
 <?php
 
-include "connect.php";
+require_once "../../connect.php";
 
 session_start();
 
 $outgoing_id = mysqli_real_escape_string($mysqli, $_POST['outgoing_id']);
 $incoming_id = mysqli_real_escape_string($mysqli, $_POST['incoming_id']);
-$message = mysqli_real_escape_string($mysqli, $_POST['message']);
+$bericht = mysqli_real_escape_string($mysqli, $_POST['bericht']);
 
 if (!empty($message)) {
-    $sql = mysqli_query($mysqli, "INSERT INTO messages (incoming_msg_id, outgoing_msg_id, msg) VALUES ({$incoming_id}, {$outgoing_id}, '{$message}')") or die("Error: " . mysqli_error($connection));
+    $sql = mysqli_query($mysqli, "INSERT INTO gesprekken (bericht, incoming_msg_id, outgoing_message_id) VALUES ({$incoming_id}, {$outgoing_id}, '{$bericht}')") or die("Error: " . mysqli_error($mysqli));
 }
 
 ?>
