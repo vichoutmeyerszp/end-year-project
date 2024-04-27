@@ -1,9 +1,11 @@
 <?php 
-include "connect.php";
+include "components/navbar.php";
+
 
 ?>
 
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"/>
+<link href="https://cdn.jsdelivr.net/npm/daisyui@3.7.4/dist/full.css" rel="stylesheet" type="text/css" />
+  <script src="https://cdn.tailwindcss.com"></script>
 
 <body>
     <div class="box">
@@ -11,22 +13,25 @@ include "connect.php";
             <section class="chat-area">
                 <header>
                     <?php
-                        $userssid = $_SESSION['user']['id'];
-                        $userid = mysqli_real_escape_string($connection, $_GET['userid']);
+                        $gebruikersid = $_SESSION['login'];
+                        if($_GET['vriend']) {
+                         $_SESSION['vriend'] = mysqli_real_escape_string($mysqli, $_GET['vriend']);
+                        }
+                        $vriendid = $_SESSION['vriend'];
                         $row = [];
-                        $sql = mysqli_query($connection, "SELECT * FROM users JOIN user_profile ON users.id = user_profile.userid  WHERE users.id = {$userid}");
-                        $sql = mysqli_query($connection, "SELECT * FROM users JOIN user_profile ON users.id = user_profile.userid  WHERE users.id = {$userid}");
+                        $sql = mysqli_query($mysqli, "SELECT * FROM tblgebruikers WHERE gebruikerid = {$vriendid}");
+                        $sql = mysqli_query($mysqli, "SELECT * FROM tblgebruikers WHERE gebruikerid = {$vriendid}");
                         if ($sql) {
                             if (mysqli_num_rows($sql) > 0) {
                                 $row = mysqli_fetch_assoc($sql);
                             }
                         } else {
-                            echo "Error: " . mysqli_error($connection);
+                            echo "Error: " . mysqli_error($mysqli);
                         }
                     ?>
-                    <img src="/public/images/<?php echo $row['profilepicture'] ?>" alt="#">
+                    <img src="/public/images/<?php echo $row['profielfoto'] ?>" alt="#">
                     <div class="details">
-                        <span><?php echo $row['firstname'] . " " . $row['lastname'] ?></span>
+                        <span><?php echo $row['voornaam'] . " " . $row['naam'] ?></span>
                         <p>Online now</p>
                     </div>
                 </header>
@@ -34,10 +39,10 @@ include "connect.php";
                     
                 </div>
                 <form action="#" class="typing-area" autocomplete="off">
-                    <input type="text" name="outgoing_id" value="<?php echo $userssid; ?>" hidden>
-                    <input type="text" name="incoming_id" value="<?php echo $userid; ?>" hidden>
-                    <input type="text" name="message" class="input-field" placeholder="Type a message here...">
-                    <button><i class="fab fa-telegram-plane"></i></button>
+                    <input type="text" name="outgoing_id" value="<?php echo $gebruikersid; ?>" hidden>
+                    <input type="text" name="incoming_id" value="<?php echo $vriendid; ?>" hidden>
+                    <input type="text" name="message" class="input-field" placeholder="Schrijf hier uw bericht...">
+                    <button>Stuur</button>
                 </form>
             </section>
         </div>

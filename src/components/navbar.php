@@ -42,7 +42,7 @@ session_start();
 </div>
 <?php
         } else {
-            print '<a href="login.php" class="btn text-white ml-2">login</a>';
+            print '<a href="login.php" class="btn text-white ml-2">Sign in</a>';
         }
 ?>
 </div>
