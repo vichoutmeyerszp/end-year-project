@@ -31,7 +31,7 @@ include "./functions/maintenanceFunctions.php";
       }
       img {
         height: 200;
-        width: 300;
+        width: 800;
       }
     
     </style>
@@ -40,7 +40,7 @@ include "./functions/maintenanceFunctions.php";
 
 
 
-<div class="carousel w-124 p-4 space-x-4 bg-neutral rounded-box">
+<div class="carousel w-124 p-4 space-x-4 bg-neutral rounded-box scroll-smooth">
   <div class="carousel-item h-104 p-54  p-200">
   <div class="card w-96 bg-[#D3D3D3] shadow-xl">
  <div class="card-body items-center text-center">
@@ -62,9 +62,11 @@ include "./functions/maintenanceFunctions.php";
     <?php
 
       if(checkmaintenanceColors($mysqli) == "0") {
-      echo' <a href="./Games/Colors/Colors.php" class="btn btn-primary">Play now!</a>';
+      echo' <a href="./Games/Colors/Colors.php" class="btn btn-primary">Play now!</a>
+            <a href="feedback.php?Colors" class="btn btn-accent">Feedback geven</a>';
       if(isset($_SESSION['admin']) == "true") {
-      echo' <a href="tblMaintenance.php?enableColor" class="btn btn-error">Set Maintenance</a>';
+      echo' <a href="tblMaintenance.php?enableColor" class="btn btn-error">Set Maintenance</a>
+            <a href="feedbackBekijken.php?Colors" class="btn btn-accent">Feedback bekijken</a>';
       }
     }
       else {
@@ -103,9 +105,11 @@ include "./functions/maintenanceFunctions.php";
     <div class="card-actions">
     <?php
 if(checkmaintenanceSpaceInvaders($mysqli) == "0") {
-echo' <a href="./Games/SpaceInvaders/SpaceInvaders_Menu.php" class="btn btn-primary">Play now!</a>';
+echo' <a href="./Games/SpaceInvaders/SpaceInvaders_Menu.php" class="btn btn-primary">Play now!</a>
+      <a href="feedback.php?SpaceInvaders" class="btn btn-accent">Feedback geven</a>';
 if(isset($_SESSION['admin']) == "true") {
-echo' <a href="tblMaintenance.php?enableSpaceInvaders" class="btn btn-error">Set Maintenance</a>';
+echo' <a href="tblMaintenance.php?enableSpaceInvaders" class="btn btn-error">Set Maintenance</a>
+      <a href="feedbackBekijken.php?SpaceInvaders" class="btn btn-accent">Feedback bekijken</a>';
 }
 }
 else {
@@ -144,9 +148,11 @@ else {
     <?php
 
 if(checkmaintenanceTetris($mysqli) == "0") {
-echo' <a href="./Games/Tetris/tetris.php" class="btn btn-primary">Play now!</a>';
+echo' <a href="./Games/Tetris/tetris.php" class="btn btn-primary">Play now!</a>
+      <a href="feedback.php?Tetris" class="btn btn-accent">Feedback geven</a>';
 if(isset($_SESSION['admin']) == "true") {
-echo' <a href="tblMaintenance.php?enableTetris" class="btn btn-error">Set Maintenance</a>';
+echo' <a href="tblMaintenance.php?enableTetris" class="btn btn-error">Set Maintenance</a>
+      <a href="feedbackBekijken.php?Tetris" class="btn btn-accent">Feedback bekijken</a>';
 }
 }
 else {
@@ -185,10 +191,12 @@ else {
     <div class="card-actions">
     <?php
 
-if(checkmaintenanceTetris($mysqli) == "0") {
-echo' <a href="./Games/BSC/BSC.php" class="btn btn-primary">Play now!</a></a>';
+if(checkmaintenanceBSC($mysqli) == "0") {
+echo' <a href="./Games/BSC/BSC.php" class="btn btn-primary">Play now!</a>
+      <a href="feedback.php?BSC" class="btn btn-accent">Feedback geven</a>';
 if(isset($_SESSION['admin']) == "true") {
-echo' <a href="tblMaintenance.php?enableBSC" class="btn btn-error">Set Maintenance</a>';
+echo' <a href="tblMaintenance.php?enableBSC" class="btn btn-error">Set Maintenance</a>
+      <a href="feedbackBekijken.php?BSC" class="btn btn-accent">Feedback bekijken</a>';
 }
 }
 else {
@@ -222,16 +230,18 @@ else {
         Info over het spel
          </div>
          <div class="collapse-content"> 
-           <p>Vind je jezelf een gelukzak? Dat zal het spel wel bepalen. Hoeveel keer kan je winnen zonder te verliezen of gelijkspel te krijgen? </p>
+           <p>Ah, snake... altijd een grote vraatslust, maar toch zo klunzig met zijn staart. Kan je hem helpen zoveel mogelijk appels te eten zonder tegen zijn staart of de muur te botsen?</p>
           </div>
         </div>
   <div class="card-actions">
   <?php
 
 if(checkmaintenanceSnake($mysqli) == "0") {
-echo' <a href="./Games/Snake/Snake.php" class="btn btn-primary">Play now!</a></a>';
+echo' <a href="./Games/Snake/Snake.php" class="btn btn-primary">Play now!</a>
+      <a href="feedback.php?Snake" class="btn btn-accent">Feedback geven</a>';
 if(isset($_SESSION['admin']) == "true") {
-echo' <a href="tblMaintenance.php?enableSnake" class="btn btn-error">Set Maintenance</a>';
+echo' <a href="tblMaintenance.php?enableSnake" class="btn btn-error">Set Maintenance</a>
+      <a href="feedbackBekijken.php?Snake" class="btn btn-accent">Feedback bekijken</a>';
 }
 }
 else {

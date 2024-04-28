@@ -9,7 +9,10 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="shortcut icon" href="#" />
 
-
+    <header>
+  <a href="../../index.php" class="btn btn-ghost normal-case text-xl text-white">Game World</a>
+  <h1 class="text-white">Snake</h1>
+</header>
   <style>
   html, body {
     height: 100%;
@@ -35,8 +38,7 @@
   </style>
 </head>
 
-<a href="../../index.php" class="btn btn-ghost normal-case text-xl text-white">Game World</a>
-  <h1 class="text-white">Snake</h1>
+
 <body>
 <canvas width="400" height="400" id="game"></canvas>
 <script src="Snake.js"></script>

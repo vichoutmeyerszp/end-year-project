@@ -1,7 +1,6 @@
 <html lang="en">
     <head>
     <meta charset="UTF-8">
-    <title>Color Guess</title>
     <link rel="stylesheet" href="Colors.css">
     <link rel="icon" href="fav.png">
     
@@ -13,7 +12,7 @@
 
 
     <div class="top">
-       <a href="../../index.php">Game World</a>
+       <a href="../../index.php" id="home">Game World</a>
        <button id="start" onclick="startGame()">Start</button>
         <div id="color1" class="colorText color1"></div>
         <div id="color2" class="colorText color2"></div>

@@ -30,10 +30,10 @@ session_start();
         <details open>
             <summary>Profiel</summary>
             <ul>
-                <li><a href="profielbewerken.php" class="justify-between text-xs"> -    Bewerken</a></li>
-                <li><a href="vrienden.php" class="justify-between text-xs"> -    Vrienden</a></li>
-                <li><a href="verzoeken.php" class="justify-between text-xs"> -    Verzoeken</a></li>
-                <li><a href="spelers.php" class="justify-between text-xs"> -    Spelers</a></li>
+                <li><a href="profielbewerken.php" class="justify-between text-xs">- Bewerken</a></li>
+                <li><a href="vrienden.php" class="justify-between text-xs">- Vrienden</a></li>
+                <li><a href="verzoeken.php" class="justify-between text-xs">- Verzoeken</a></li>
+                <li><a href="spelers.php" class="justify-between text-xs">- Spelers</a></li>
             </ul>
         </details>
 

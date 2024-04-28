@@ -51,5 +51,10 @@ function deleteFriends($connection, $gebruikerid) {
     return $resultaat;
 }
 
+function getReview($connection, $spel) {
+    $resultaat = $connection->query("SELECT * FROM tblfeedback where spel = '".$spel."'");
+    return ($resultaat->num_rows == 0)?false:$resultaat->fetch_all(MYSQLI_ASSOC);
+}
+
 
 ?>

@@ -9,7 +9,7 @@ $incoming_id = mysqli_real_escape_string($mysqli, $_POST['incoming_id']);
 $bericht = mysqli_real_escape_string($mysqli, $_POST['bericht']);
 
 if (!empty($message)) {
-    $sql = mysqli_query($mysqli, "INSERT INTO gesprekken (bericht, incoming_msg_id, outgoing_message_id) VALUES ({$incoming_id}, {$outgoing_id}, '{$bericht}')") or die("Error: " . mysqli_error($mysqli));
+    $sql = mysqli_query($mysqli, "INSERT INTO gesprekken (bericht, incoming_msg_id, outgoing_message_id) VALUES ({$bericht}, {$incoming_id}, '{$outgoing_id}')") or die("Error: " . mysqli_error($mysqli));
 }
 
 ?>

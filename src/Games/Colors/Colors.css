@@ -5,10 +5,19 @@ body{
     background-color: rgb(24, 24, 24);
 }
 
-a {
+#home{
     text-align: center;
+    font-size: 2rem;
     margin: auto;
-    background: rgb(0,0,0)
+    display: inline-block;
+    transition: all 0.2s ease;
+    background: rgb(0,0,0);
+
+
+}
+#home:hover {
+    cursor: pointer;
+    background: grey;
 }
 
 .bottom{
