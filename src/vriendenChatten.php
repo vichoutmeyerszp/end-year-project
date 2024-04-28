@@ -1,7 +1,7 @@
 <?php 
 include "components/navbar.php";
 
-// shout-out to Cedric for letting me borrow the code for the most part 👍
+// shout-out to Ilias for letting me borrow the code for the most part 👍
 ?>
 
 <link href="https://cdn.jsdelivr.net/npm/daisyui@3.7.4/dist/full.css" rel="stylesheet" type="text/css" />
@@ -51,10 +51,6 @@ include "components/navbar.php";
 <script src="components/Chat/chat.js"></script>
 
 </body>
-
-
-
-
 
 
 <style>

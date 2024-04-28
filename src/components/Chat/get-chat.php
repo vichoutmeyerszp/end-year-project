@@ -8,13 +8,14 @@ $outgoing_id = mysqli_real_escape_string($mysqli, $_POST['outgoing_id']);
 $incoming_id = mysqli_real_escape_string($mysqli, $_POST['incoming_id']);
 $output = "";
 
-$sql = "SELECT * FROM gesprekken, tblgebruikers
-        WHERE (outgoing_msg_id = {$outgoing_id} AND incoming_msg_id = {$incoming_id}) 
-        OR (outgoing_msg_id = {$incoming_id} AND incoming_msg_id = {$outgoing_id})";
-$query = mysqli_query($mysqli, $sql);
-if (mysqli_num_rows($query) > 0) {
-    while ($row = mysqli_fetch_assoc($query)) {
-        if ($row['outgoing_msg_id'] === $outgoing_id) {
+$sql = "SELECT * FROM gesprekken
+        WHERE (outgoing_message_id = $outgoing_id AND incoming_message_id = $incoming_id) 
+        OR (outgoing_message_id = $incoming_id AND incoming_message_id = $outgoing_id)";
+$query = $mysqli->query($sql);
+
+if ($query && $query->num_rows > 0) {
+    while ($row = $query->fetch_assoc()) {
+        if ($row['outgoing_message_id'] === $outgoing_id) {
             $output .= '<div class="chat outgoing">
                             <div class="details">
                                 <p>' . $row['bericht'] . '</p>
@@ -22,8 +23,8 @@ if (mysqli_num_rows($query) > 0) {
                         </div>';
         } else {
             $output .= '<div class="chat incoming">
-                            <img src="/public/images/' . $row['profilefoto'] . '">
-                            <div class="details">
+
+                           <div class="details">
                                 <p>' . $row['bericht'] . '</p>
                             </div>
                         </div>';
@@ -32,7 +33,4 @@ if (mysqli_num_rows($query) > 0) {
     echo $output;
 }
 
-
-
-
-?>
+?> <!--img src="/public/images/' . $row['profilefoto'] . '">
