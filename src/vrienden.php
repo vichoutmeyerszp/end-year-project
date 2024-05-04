@@ -37,7 +37,7 @@ if (!isset($_SESSION['login'])) {
                             <?php
                             echo '
                             <a href="vriendenChatten.php?vriend='.$row['gebruikerid'].'" class="btn btn-ghost text-black hover:text-white hover:bg-black">Chatten</a>  
-                            <a href="vriendVerwijderen.php?vriend='.$row['gebruikerid'].'"  class="btn btn-ghost text-black hover:text-white hover:bg-red-200">Verwijder vriend</a>
+                            <a href="vriendVerwijderen.php?vriend='.$row['gebruikerid'].'"  class="btn btn-error text-black hover:text-white hover:bg-red-200">Verwijder vriend</a>
                             <p>_̲_̲_̲_̲_̲_̲_̲_̲_̲_̲_̲_̲_̲_̲_̲_̲_̲_̲_̲_̲_̲_̲_̲_̲_̲_̲_̲_̲_̲_̲_̲_̲_̲_̲_̲_̲_̲_̲_̲_̲_̲_̲</p>
                             <br>
                             ';

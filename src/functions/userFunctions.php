@@ -91,5 +91,9 @@ function addReview($connection, $spel, $feedback_gever, $feedback, $score) {
     $resultaat = $connection->query("INSERT INTO tblfeedback (spel, feedback_gever, feedback, score) VALUES ('".$spel."','".$feedback_gever."', '".$feedback."', '".$score."')");
     return $resultaat;
 }
+function deleteFriend($connection, $gebruiker1, $gebruiker2) {
+    $resultaat = $connection->query("DELETE FROM tblvrienden where gebruiker1 = '". $gebruiker1."' AND gebruiker2 = '".$gebruiker2."'");
+    return $resultaat;
+}
 
 ?>

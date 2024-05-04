@@ -35,7 +35,8 @@ if (!isset($_SESSION['login'])) {
                         <div class="details">
                             <span><?php echo $row['voornaam'] . " " . $row['naam'] ?></span>
                             <?php echo'
-                            <a href="vriendschapverzoekAccepteren.php?verzoek='.$row['gebruikerid']. '" class="btn btn-active btn-accent">Vrienschapverzoek accepteren</a>';
+                            <a href="vriendschapverzoekAccepteren.php?verzoek='.$row['gebruikerid']. '" class="btn btn-active btn-accent">Vrienschapverzoek accepteren</a>
+                            <a href="vriendschapverzoekWeigeren.php?verzoek='.$row['gebruikerid']. '" class="btn btn-active btn-error">Vrienschapverzoek weigeren</a>';
                         
                             echo '
                             <p>_̲_̲_̲_̲_̲_̲_̲_̲_̲_̲_̲_̲_̲_̲_̲_̲_̲_̲_̲_̲_̲_̲_̲_̲_̲_̲_̲_̲_̲_̲_̲_̲_̲_̲_̲_̲_̲_̲_̲_̲_̲_̲</p>

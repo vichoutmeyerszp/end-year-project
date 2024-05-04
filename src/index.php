@@ -62,8 +62,11 @@ include "./functions/maintenanceFunctions.php";
     <?php
 
       if(checkmaintenanceColors($mysqli) == "0") {
-      echo' <a href="./Games/Colors/Colors.php" class="btn btn-primary">Play now!</a>
+      echo' <a href="./Games/Colors/Colors.php" class="btn btn-primary">Play now!</a>';
+      if(isset($_SESSION['login'])) {
+        echo'
             <a href="feedback.php?Colors" class="btn btn-accent">Feedback geven</a>';
+      }
       if(isset($_SESSION['admin']) == "true") {
       echo' <a href="tblMaintenance.php?enableColor" class="btn btn-error">Set Maintenance</a>
             <a href="feedbackBekijken.php?Colors" class="btn btn-accent">Feedback bekijken</a>';
@@ -105,8 +108,11 @@ include "./functions/maintenanceFunctions.php";
     <div class="card-actions">
     <?php
 if(checkmaintenanceSpaceInvaders($mysqli) == "0") {
-echo' <a href="./Games/SpaceInvaders/SpaceInvaders_Menu.php" class="btn btn-primary">Play now!</a>
+echo' <a href="./Games/SpaceInvaders/SpaceInvaders_Menu.php" class="btn btn-primary">Play now!</a>';
+if(isset($_SESSION['login'])) {
+  echo'
       <a href="feedback.php?SpaceInvaders" class="btn btn-accent">Feedback geven</a>';
+}
 if(isset($_SESSION['admin']) == "true") {
 echo' <a href="tblMaintenance.php?enableSpaceInvaders" class="btn btn-error">Set Maintenance</a>
       <a href="feedbackBekijken.php?SpaceInvaders" class="btn btn-accent">Feedback bekijken</a>';
@@ -148,8 +154,11 @@ else {
     <?php
 
 if(checkmaintenanceTetris($mysqli) == "0") {
-echo' <a href="./Games/Tetris/tetris.php" class="btn btn-primary">Play now!</a>
+echo' <a href="./Games/Tetris/tetris.php" class="btn btn-primary">Play now!</a>';
+if(isset($_SESSION['login'])) {
+  echo'
       <a href="feedback.php?Tetris" class="btn btn-accent">Feedback geven</a>';
+}
 if(isset($_SESSION['admin']) == "true") {
 echo' <a href="tblMaintenance.php?enableTetris" class="btn btn-error">Set Maintenance</a>
       <a href="feedbackBekijken.php?Tetris" class="btn btn-accent">Feedback bekijken</a>';
@@ -192,8 +201,11 @@ else {
     <?php
 
 if(checkmaintenanceBSC($mysqli) == "0") {
-echo' <a href="./Games/BSC/BSC.php" class="btn btn-primary">Play now!</a>
+echo' <a href="./Games/BSC/BSC.php" class="btn btn-primary">Play now!</a>';
+if(isset($_SESSION['login'])) {
+  echo'
       <a href="feedback.php?BSC" class="btn btn-accent">Feedback geven</a>';
+}
 if(isset($_SESSION['admin']) == "true") {
 echo' <a href="tblMaintenance.php?enableBSC" class="btn btn-error">Set Maintenance</a>
       <a href="feedbackBekijken.php?BSC" class="btn btn-accent">Feedback bekijken</a>';
@@ -237,8 +249,11 @@ else {
   <?php
 
 if(checkmaintenanceSnake($mysqli) == "0") {
-echo' <a href="./Games/Snake/Snake.php" class="btn btn-primary">Play now!</a>
+echo' <a href="./Games/Snake/Snake.php" class="btn btn-primary">Play now!</a>';
+if(isset($_SESSION['login'])) {
+  echo'
       <a href="feedback.php?Snake" class="btn btn-accent">Feedback geven</a>';
+}
 if(isset($_SESSION['admin']) == "true") {
 echo' <a href="tblMaintenance.php?enableSnake" class="btn btn-error">Set Maintenance</a>
       <a href="feedbackBekijken.php?Snake" class="btn btn-accent">Feedback bekijken</a>';

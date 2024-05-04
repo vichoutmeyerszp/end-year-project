@@ -66,7 +66,7 @@ include "components/navbar.php";
 
 .box
 {
-    padding-left: 35%;
+    padding-left: 42%;
 }
 
 .wrapper
