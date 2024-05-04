@@ -46,15 +46,14 @@ function deleteUser($connection, $gebruikerid) {
     return $resultaat;
 }
 
-function deleteFriends($connection, $gebruikerid) {
-    $resultaat = $connection->query("DELETE FROM tblvrienden where gebruiker1 = '". $gebruikerid."' OR gebruiker2 = '". $gebruikerid."'");
-    return $resultaat;
-}
-
 function getReview($connection, $spel) {
-    $resultaat = $connection->query("SELECT * FROM tblfeedback where spel = '".$spel."'");
+    $resultaat = $connection->query("SELECT * FROM tblfeedback INNER JOIN tblgebruikers ON tblfeedback.feedback_gever = tblgebruikers.gebruikerid where spel = '".$spel."'");
     return ($resultaat->num_rows == 0)?false:$resultaat->fetch_all(MYSQLI_ASSOC);
 }
 
+function showReviewer($connection, $gebruikerid) {
+    $resultaat = $connection->query("SELECT * FROM tblfeedback INNER JOIN tblgebruikers ON tblfeedback.gebruiker2 = tblgebruikers.gebruikerid WHERE gebruiker1 = $gebruikerid");
+    return $resultaat;
+}
 
 ?>

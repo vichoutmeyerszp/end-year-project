@@ -23,7 +23,7 @@ include "components/navbar.php";
 
   <h1 class="md:text-center text-4xl font-bold mb-8">Geef uw feedback</h1>
 
-  <form action="feedback.php" method="post" enctype="multipart/form-data" class="flex flex-col gap-8 w-full md:max-w-2xl  justify-items-center">
+  <form action="feedback.php" method="post" enctype="multipart/form-data" class="flex flex-col gap-8 w-full md:max-w-2xl  mx-auto">
 
   <?php
   if(isset($_GET['Colors'])) {

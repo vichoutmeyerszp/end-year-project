@@ -15,7 +15,7 @@ include "components/navbar.php";
     <thead>
       <tr>
         <th>feedback-id</th>
-        <th>Naam feedback gever</th>
+        <th>Email feedback</th>
         <th>Gegeven feedback</th>
         <th>Gegeven score</th>
       </tr>
@@ -30,7 +30,7 @@ if(isset($_GET['Colors'])) {
 
             <tr>
                 <td>'.$row["feedbackid"].'</td>
-                <td>Cy Ganderton</td>
+                <td>'.$row["email"].'</td>
                 <td>'.$row["feedback"].'</td>
                 <td>'.$row["score"].'</td>
                </tr>';
@@ -47,7 +47,7 @@ if(isset($_GET['SpaceInvaders'])) {
 
         echo '<tr>
         <td>'.$row["feedbackid"].'</td>
-        <td>Cy Ganderton</td>
+        <td>'.$row["email"].'</td>
         <td>'.$row["feedback"].'</td>
         <td>'.$row["score"].'</td>
         </tr>';
@@ -58,7 +58,7 @@ if(isset($_GET['Tetris'])) {
     foreach(getReview($mysqli, "Tetris") as $row){
         echo '<tr>
         <td>'.$row["feedbackid"].'</td>
-        <td>Cy Ganderton</td>
+        <td>'.$row["email"].'</td>
         <td>'.$row["feedback"].'</td>
         <td>'.$row["score"].'</td>
         </tr>';
@@ -69,7 +69,7 @@ if(isset($_GET['BSC'])) {
     foreach(getReview($mysqli, "BSC") as $row){
         echo '<tr>
         <td>'.$row["feedbackid"].'</td>
-        <td>Cy Ganderton</td>
+        <td>'.$row["email"].'</td>
         <td>'.$row["feedback"].'</td>
         <td>'.$row["score"].'</td>
         </tr>';
@@ -80,7 +80,7 @@ if(isset($_GET['Snake'])) {
     foreach(getReview($mysqli, "Snake") as $row){
         echo '<tr>
         <td>'.$row["feedbackid"].'</td>
-        <td>Cy Ganderton</td>
+        <td>'.$row["email"].'</td>
         <td>'.$row["feedback"].'</td>
         <td>'.$row["score"].'</td>
         </tr>';
