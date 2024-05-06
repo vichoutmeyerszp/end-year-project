@@ -41,7 +41,7 @@ include "./functions/maintenanceFunctions.php";
 
 
 <div class="carousel w-124 p-4 space-x-4 bg-neutral rounded-box scroll-smooth">
-  <div class="carousel-item h-104 p-54  p-200">
+  <div class="carousel-item h-104  p-200">
   <div class="card w-96 bg-[#D3D3D3] shadow-xl">
  <div class="card-body items-center text-center">
     <h1 class="card-title">Colors</h1>
@@ -68,8 +68,14 @@ include "./functions/maintenanceFunctions.php";
             <a href="feedback.php?Colors" class="btn btn-accent">Feedback geven</a>';
       }
       if(isset($_SESSION['admin']) == "true") {
-      echo' <a href="tblMaintenance.php?enableColor" class="btn btn-error">Set Maintenance</a>
-            <a href="feedbackBekijken.php?Colors" class="btn btn-accent">Feedback bekijken</a>';
+        
+      echo' <div class="dropdown">
+              <div tabindex="0" role="button" class="btn m-1">Admin </div>
+                <ul tabindex="0" class="dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-box w-52">
+                    <a href="tblMaintenance.php?enableColor" class="btn btn-error">Set Maintenance</a>
+                    <a href="feedbackBekijken.php?Colors" class="btn btn-accent">Feedback bekijken</a>
+               </ul>
+             </div>';
       }
     }
       else {
@@ -114,8 +120,13 @@ if(isset($_SESSION['login'])) {
       <a href="feedback.php?SpaceInvaders" class="btn btn-accent">Feedback geven</a>';
 }
 if(isset($_SESSION['admin']) == "true") {
-echo' <a href="tblMaintenance.php?enableSpaceInvaders" class="btn btn-error">Set Maintenance</a>
-      <a href="feedbackBekijken.php?SpaceInvaders" class="btn btn-accent">Feedback bekijken</a>';
+echo'  <div class="dropdown">
+              <div tabindex="0" role="button" class="btn m-1">Admin </div>
+                <ul tabindex="0" class="dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-box w-52">
+                  <a href="tblMaintenance.php?enableSpaceInvaders" class="btn btn-error">Set Maintenance</a>
+                  <a href="feedbackBekijken.php?SpaceInvaders" class="btn btn-accent">Feedback bekijken</a>
+                </ul>
+              </div>';
 }
 }
 else {
@@ -160,8 +171,13 @@ if(isset($_SESSION['login'])) {
       <a href="feedback.php?Tetris" class="btn btn-accent">Feedback geven</a>';
 }
 if(isset($_SESSION['admin']) == "true") {
-echo' <a href="tblMaintenance.php?enableTetris" class="btn btn-error">Set Maintenance</a>
-      <a href="feedbackBekijken.php?Tetris" class="btn btn-accent">Feedback bekijken</a>';
+echo' <div class="dropdown">
+        <div tabindex="0" role="button" class="btn m-1">Admin </div>
+         <ul tabindex="0" class="dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-box w-52">
+          <a href="tblMaintenance.php?enableTetris" class="btn btn-error">Set Maintenance</a>
+          <a href="feedbackBekijken.php?Tetris" class="btn btn-accent">Feedback bekijken</a>
+         </ul>
+        </div>';
 }
 }
 else {
@@ -207,8 +223,13 @@ if(isset($_SESSION['login'])) {
       <a href="feedback.php?BSC" class="btn btn-accent">Feedback geven</a>';
 }
 if(isset($_SESSION['admin']) == "true") {
-echo' <a href="tblMaintenance.php?enableBSC" class="btn btn-error">Set Maintenance</a>
-      <a href="feedbackBekijken.php?BSC" class="btn btn-accent">Feedback bekijken</a>';
+echo' <div class="dropdown">
+        <div tabindex="0" role="button" class="btn m-1">Admin </div>
+         <ul tabindex="0" class="dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-box w-52">
+          <a href="tblMaintenance.php?enableBSC" class="btn btn-error">Set Maintenance</a>
+          <a href="feedbackBekijken.php?BSC" class="btn btn-accent">Feedback bekijken</a>
+         </ul>
+        </div>';
 }
 }
 else {
@@ -255,8 +276,13 @@ if(isset($_SESSION['login'])) {
       <a href="feedback.php?Snake" class="btn btn-accent">Feedback geven</a>';
 }
 if(isset($_SESSION['admin']) == "true") {
-echo' <a href="tblMaintenance.php?enableSnake" class="btn btn-error">Set Maintenance</a>
-      <a href="feedbackBekijken.php?Snake" class="btn btn-accent">Feedback bekijken</a>';
+echo' <div class="dropdown">
+        <div tabindex="0" role="button" class="btn m-1">Admin </div>
+          <ul tabindex="0" class="dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-box w-52">
+            <a href="tblMaintenance.php?enableSnake" class="btn btn-error">Set Maintenance</a>
+            <a href="feedbackBekijken.php?Snake" class="btn btn-accent">Feedback bekijken</a>
+          </ul>
+        </div>';
 }
 }
 else {
