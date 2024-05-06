@@ -2,7 +2,7 @@
 include "components/navbar.php";
 
  if(isset($_POST['Feedback'])) {
-    addReview($mysqli, $_POST['spel'], $_SESSION['login'], $_POST['feedback'], $_POST['score']);
+    addReview($mysqli, $_POST['spel'], $_SESSION['login'], $_POST['feedback'], $_POST['rating-10']);
     }
 ?>
 
@@ -62,7 +62,19 @@ include "components/navbar.php";
           <label class="label">
             <span class="label-text md:text-center">Op een score van 10, hoeveel geef je het?</span>
           </label>
-          <input type="number" name="score" class="input input-bordered w-full" placeholder="0" min="0" max="10" required />
+          <div class="rating rating-lg rating-half">
+            <input type="radio" name="rating-10" class="rating-hidden" />
+            <input type="radio" name="rating-10" value="1"  class="bg-yellow-400 mask mask-star-2 mask-half-1" />
+            <input type="radio" name="rating-10" value="2"  class="bg-yellow-400 mask mask-star-2 mask-half-2" />
+            <input type="radio" name="rating-10" value="3"  class="bg-yellow-400 mask mask-star-2 mask-half-1" />
+            <input type="radio" name="rating-10" value="4"  class="bg-yellow-400 mask mask-star-2 mask-half-2" />
+            <input type="radio" name="rating-10" value="5"  class="bg-yellow-400 mask mask-star-2 mask-half-1" />
+            <input type="radio" name="rating-10" value="6"  class="bg-yellow-400 mask mask-star-2 mask-half-2" />
+            <input type="radio" name="rating-10" value="8"  class="bg-yellow-400 mask mask-star-2 mask-half-1" />
+            <input type="radio" name="rating-10" value="8"  class="bg-yellow-400 mask mask-star-2 mask-half-2" />
+            <input type="radio" name="rating-10" value="9"  class="bg-yellow-400 mask mask-star-2 mask-half-1" />
+            <input type="radio" name="rating-10" value="10" class="bg-yellow-400 mask mask-star-2 mask-half-2" />
+          </div>
         </div>
     <button name="Feedback" class="btn btn-primary">Geef feedback</button>
   </form>
