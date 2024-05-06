@@ -29,7 +29,7 @@ include "components/navbar.php";
                             echo "Error: " . mysqli_error($mysqli);
                         }
                     ?>
-                    <img src="/public/images/<?php echo $row['profielfoto'] ?>" alt="#">
+                    <img src="../public/images/<?php echo $row['profielfoto'] ?>" alt="#">
                     <div class="details">
                         <span><?php echo $row['voornaam'] . " " . $row['naam'] ?></span>
                         <p>Online now</p>
