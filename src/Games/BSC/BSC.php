@@ -1,3 +1,15 @@
+<?php
+include "../../connect.php";
+include "../../functions/maintenanceFunctions.php";
+
+if(checkmaintenanceBSC($mysqli) == "1") {
+    header('location: ../../index.php');
+}
+
+?>
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 

@@ -1,3 +1,14 @@
+<?php
+include "../../connect.php";
+include "../../functions/maintenanceFunctions.php";
+
+if(checkmaintenanceTetris($mysqli) == "1") {
+    header('location: ../../index.php');
+}
+
+?>
+
+
 <html>
 <head>
     <title>Tetris</title>

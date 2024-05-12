@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.2.1
+-- version 5.2.0
 -- https://www.phpmyadmin.net/
 --
--- Host: 127.0.0.1
--- Gegenereerd op: 22 apr 2024 om 16:17
--- Serverversie: 10.4.28-MariaDB
--- PHP-versie: 8.2.4
+-- Host: 127.0.0.1:3306
+-- Generation Time: May 12, 2024 at 08:53 PM
+-- Server version: 8.0.31
+-- PHP Version: 8.0.26
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -24,196 +24,158 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Tabelstructuur voor tabel `tblannouncements`
+-- Table structure for table `gesprekken`
 --
 
-CREATE TABLE `tblannouncements` (
-  `Announcementid` int(11) NOT NULL,
-  `AnnouncementTitle` text CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
-  `AnnouncementText` text CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
-  `StartTime` date NOT NULL
-) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+DROP TABLE IF EXISTS `gesprekken`;
+CREATE TABLE IF NOT EXISTS `gesprekken` (
+  `berichtid` int NOT NULL AUTO_INCREMENT,
+  `bericht` text NOT NULL,
+  `outgoing_message_id` int NOT NULL,
+  `incoming_message_id` int NOT NULL,
+  PRIMARY KEY (`berichtid`)
+) ENGINE=MyISAM AUTO_INCREMENT=16 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+-- --------------------------------------------------------
 
 --
--- Gegevens worden geëxporteerd voor tabel `tblannouncements`
+-- Table structure for table `tblannouncements`
+--
+
+DROP TABLE IF EXISTS `tblannouncements`;
+CREATE TABLE IF NOT EXISTS `tblannouncements` (
+  `Announcementid` int NOT NULL AUTO_INCREMENT,
+  `AnnouncementTitle` text CHARACTER SET utf8mb3 COLLATE utf8mb3_general_ci NOT NULL,
+  `AnnouncementText` text CHARACTER SET utf8mb3 COLLATE utf8mb3_general_ci NOT NULL,
+  `StartTime` date NOT NULL,
+  PRIMARY KEY (`Announcementid`)
+) ENGINE=MyISAM AUTO_INCREMENT=17 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+--
+-- Dumping data for table `tblannouncements`
 --
 
 INSERT INTO `tblannouncements` (`Announcementid`, `AnnouncementTitle`, `AnnouncementText`, `StartTime`) VALUES
-(12, 'Space Invaders wedstrijd', 'Speler dat sjnelste het spel kan afmaken', '2023-12-01'),
-(13, 'a', 'b', '2024-01-08'),
-(14, 'hello darkess', 'my old friend', '2024-01-08'),
-(15, 'hello darkness my old friend', 'i have come to talk to you again', '2024-01-08'),
-(16, 'bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb', 'hello there i have come to come to see you again', '2024-01-08');
+(16, 'Example Title', 'Example Announcement', '2024-05-12'),
+(15, 'Example Title', 'Example Announcement', '2024-05-12'),
+(14, 'Mogelijke Maintenance', 'Beste, er is een kans dat de site mogelijk in Maintenance zal moeten gaan voor komende week door slechte omstandigheden met de Database. We hopen je ze terug te zien', '2024-03-03'),
+(12, 'Announcement test', 'Dit is een announcement, en hiernaast geeft het de datum dat de announcement gemaakt is', '2023-11-30');
 
 -- --------------------------------------------------------
 
 --
--- Tabelstructuur voor tabel `tblgebruikers`
+-- Table structure for table `tblfeedback`
 --
 
-CREATE TABLE `tblgebruikers` (
-  `gebruikerid` int(11) NOT NULL,
-  `voornaam` text NOT NULL,
-  `naam` text NOT NULL,
-  `email` text NOT NULL,
-  `wachtwoord` text CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
-  `admin` tinyint(4) NOT NULL,
-  `profielfoto` text CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
-  `beschrijving` text NOT NULL
-) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+DROP TABLE IF EXISTS `tblfeedback`;
+CREATE TABLE IF NOT EXISTS `tblfeedback` (
+  `feedbackid` int NOT NULL AUTO_INCREMENT,
+  `spel` text NOT NULL,
+  `feedback_gever` text NOT NULL,
+  `feedback` text NOT NULL,
+  `score` int NOT NULL,
+  PRIMARY KEY (`feedbackid`)
+) ENGINE=MyISAM AUTO_INCREMENT=19 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+-- --------------------------------------------------------
 
 --
--- Gegevens worden geëxporteerd voor tabel `tblgebruikers`
+-- Table structure for table `tblgebruikers`
+--
+
+DROP TABLE IF EXISTS `tblgebruikers`;
+CREATE TABLE IF NOT EXISTS `tblgebruikers` (
+  `gebruikerid` int NOT NULL AUTO_INCREMENT,
+  `voornaam` text CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
+  `naam` text CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
+  `email` text CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
+  `wachtwoord` text CHARACTER SET utf8mb3 COLLATE utf8mb3_general_ci NOT NULL,
+  `admin` tinyint NOT NULL,
+  `profielfoto` text CHARACTER SET utf8mb3 COLLATE utf8mb3_general_ci NOT NULL,
+  `beschrijving` text CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
+  PRIMARY KEY (`gebruikerid`)
+) ENGINE=MyISAM AUTO_INCREMENT=17 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+--
+-- Dumping data for table `tblgebruikers`
 --
 
 INSERT INTO `tblgebruikers` (`gebruikerid`, `voornaam`, `naam`, `email`, `wachtwoord`, `admin`, `profielfoto`, `beschrijving`) VALUES
-(11, 'Alsa', 'Olsa', 'AlsoOlsa@gmail.com', '$2y$10$dXj.ObQhc21d7ptSTkSAUuPN5nVdtqhaMatligZy2nMq.bzUyPiLi', 0, '16069142702581.png', 'Hallo :D'),
-(9, 'cédric', 'verlinden', 'gezgdshehqhqrqhjreqjj@a.a', '$2y$10$pAg3ijKIlFztfww/3SNP1OGyxzV5fVnkiBFYq47Gw.BW.2akR.Km.', 1, 'images1.jpg', '123'),
-(12, 'Olqio', 'Ceronoir', 'OlqioCeronoir@gmail.com', '$2y$10$BSpIRmSIvDWNRne85NvaY.Sri2LFRoDfMhL9yFAr7YCmkO185rzzq', 0, 'ninjaStar.jpg', 'DIt is een account tester');
+(16, 'Vic', 'Houtmeyers', 'vichoutmeyers@bazandpoort.be', '$2y$10$jHetDF5p6OTqmCaBExrEyu1Hq1A0wtqLhTH4rR0atq1blEwiL6Yea', 1, 'yeet123.png', '123'),
+(15, 'Vic', 'Houtmeyers', 'Zero@Zero.Zero', '$2y$10$vSeE2dHmhSzmppZgFp5CpuwLp1XdqurGHP4Ea9iKK7TGwCX90PCii', 0, 'g u n.jpg', '123');
 
 -- --------------------------------------------------------
 
 --
--- Tabelstructuur voor tabel `tblgoals`
+-- Table structure for table `tblgoals`
 --
 
-CREATE TABLE `tblgoals` (
-  `Goalid` int(11) NOT NULL,
+DROP TABLE IF EXISTS `tblgoals`;
+CREATE TABLE IF NOT EXISTS `tblgoals` (
+  `Goalid` int NOT NULL AUTO_INCREMENT,
   `GoalTitle` text NOT NULL,
   `Descriptie` text NOT NULL,
   `Prijs` text NOT NULL,
-  `StartTime` date NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+  `StartTime` date NOT NULL,
+  PRIMARY KEY (`Goalid`)
+) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --
--- Gegevens worden geëxporteerd voor tabel `tblgoals`
+-- Dumping data for table `tblgoals`
 --
 
 INSERT INTO `tblgoals` (`Goalid`, `GoalTitle`, `Descriptie`, `Prijs`, `StartTime`) VALUES
-(2, 'Haal 5000 points in Tetris', 'Vandaag moet je het doen', '€5.00', '2024-03-01'),
-(4, 'Beat Space Invaders 3 times in a row', 'Template', 'Special tag next to your name', '2024-03-11'),
-(5, 'Template', 'Template', 'SPecial tag', '2024-03-11');
+(1, 'Example Title', 'Example Description', 'Example Price', '2024-05-12');
 
 -- --------------------------------------------------------
 
 --
--- Tabelstructuur voor tabel `tblmaintenance`
+-- Table structure for table `tblmaintenance`
 --
 
-CREATE TABLE `tblmaintenance` (
+DROP TABLE IF EXISTS `tblmaintenance`;
+CREATE TABLE IF NOT EXISTS `tblmaintenance` (
   `Colors` tinyint(1) NOT NULL,
   `SpaceInvaders` tinyint(1) NOT NULL,
   `Tetris` tinyint(1) NOT NULL,
   `BSC` tinyint(1) NOT NULL,
   `Snake` tinyint(1) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --
--- Gegevens worden geëxporteerd voor tabel `tblmaintenance`
+-- Dumping data for table `tblmaintenance`
 --
 
 INSERT INTO `tblmaintenance` (`Colors`, `SpaceInvaders`, `Tetris`, `BSC`, `Snake`) VALUES
-(1, 0, 0, 0, 0);
+(0, 0, 0, 0, 0);
 
 -- --------------------------------------------------------
 
 --
--- Tabelstructuur voor tabel `tblverzoeken`
+-- Table structure for table `tblverzoeken`
 --
 
-CREATE TABLE `tblverzoeken` (
-  `verzoekid` int(11) NOT NULL,
-  `verzoeker` int(11) NOT NULL,
-  `ontvanger` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+DROP TABLE IF EXISTS `tblverzoeken`;
+CREATE TABLE IF NOT EXISTS `tblverzoeken` (
+  `verzoekid` int NOT NULL AUTO_INCREMENT,
+  `verzoeker` int NOT NULL,
+  `ontvanger` int NOT NULL,
+  PRIMARY KEY (`verzoekid`)
+) ENGINE=MyISAM AUTO_INCREMENT=14 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 -- --------------------------------------------------------
 
 --
--- Tabelstructuur voor tabel `tblvrienden`
+-- Table structure for table `tblvrienden`
 --
 
-CREATE TABLE `tblvrienden` (
-  `vriendid` int(11) NOT NULL,
-  `gebruiker1` int(11) NOT NULL,
-  `gebruiker2` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Gegevens worden geëxporteerd voor tabel `tblvrienden`
---
-
-INSERT INTO `tblvrienden` (`vriendid`, `gebruiker1`, `gebruiker2`) VALUES
-(13, 11, 12),
-(14, 12, 11);
-
---
--- Indexen voor geëxporteerde tabellen
---
-
---
--- Indexen voor tabel `tblannouncements`
---
-ALTER TABLE `tblannouncements`
-  ADD PRIMARY KEY (`Announcementid`);
-
---
--- Indexen voor tabel `tblgebruikers`
---
-ALTER TABLE `tblgebruikers`
-  ADD PRIMARY KEY (`gebruikerid`);
-
---
--- Indexen voor tabel `tblgoals`
---
-ALTER TABLE `tblgoals`
-  ADD PRIMARY KEY (`Goalid`);
-
---
--- Indexen voor tabel `tblverzoeken`
---
-ALTER TABLE `tblverzoeken`
-  ADD PRIMARY KEY (`verzoekid`);
-
---
--- Indexen voor tabel `tblvrienden`
---
-ALTER TABLE `tblvrienden`
-  ADD PRIMARY KEY (`vriendid`);
-
---
--- AUTO_INCREMENT voor geëxporteerde tabellen
---
-
---
--- AUTO_INCREMENT voor een tabel `tblannouncements`
---
-ALTER TABLE `tblannouncements`
-  MODIFY `Announcementid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
-
---
--- AUTO_INCREMENT voor een tabel `tblgebruikers`
---
-ALTER TABLE `tblgebruikers`
-  MODIFY `gebruikerid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
-
---
--- AUTO_INCREMENT voor een tabel `tblgoals`
---
-ALTER TABLE `tblgoals`
-  MODIFY `Goalid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
-
---
--- AUTO_INCREMENT voor een tabel `tblverzoeken`
---
-ALTER TABLE `tblverzoeken`
-  MODIFY `verzoekid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
-
---
--- AUTO_INCREMENT voor een tabel `tblvrienden`
---
-ALTER TABLE `tblvrienden`
-  MODIFY `vriendid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+DROP TABLE IF EXISTS `tblvrienden`;
+CREATE TABLE IF NOT EXISTS `tblvrienden` (
+  `vriendid` int NOT NULL AUTO_INCREMENT,
+  `gebruiker1` int NOT NULL,
+  `gebruiker2` int NOT NULL,
+  PRIMARY KEY (`vriendid`)
+) ENGINE=MyISAM AUTO_INCREMENT=97 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

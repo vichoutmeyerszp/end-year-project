@@ -1,3 +1,14 @@
+<?php
+include "../../connect.php";
+include "../../functions/maintenanceFunctions.php";
+
+if(checkmaintenanceColors($mysqli) == "1") {
+    header('location: ../../index.php');
+}
+
+?>
+
+
 <html lang="en">
     <head>
     <meta charset="UTF-8">

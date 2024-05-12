@@ -49,7 +49,7 @@ include "components/navbar.php";
                if(isset($_SESSION["admin"])){
                 echo'
          
-                <button class="btn  hover:bg-[#000048] text-center" onclick="my_modal_1.showModal()">Voeg Goal Toe</button>
+                <a href="announcementGoalToevoegen.php" class="btn hover:bg-[#000048] text-center">Voeg Goal Toe</a>
                 <dialog id="my_modal_1" class="modal">
                     <div class="modal-box">
                         <h3 class="font-bold text-lg">Geef hier je goal in</h3>

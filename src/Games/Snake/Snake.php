@@ -1,3 +1,14 @@
+<?php
+include "../../connect.php";
+include "../../functions/maintenanceFunctions.php";
+
+if(checkmaintenanceSnake($mysqli) == "1") {
+    header('location: ../../index.php');
+}
+
+?>
+
+
 <!DOCTYPE html>
 <html>
 <head>

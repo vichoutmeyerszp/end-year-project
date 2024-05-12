@@ -48,37 +48,8 @@ include "components/navbar.php";
                if(isset($_SESSION["admin"])){
                 echo'
          
-                <button class="btn  hover:bg-[#000048] items justify-center text-center" onclick="my_modal_1.showModal()">Voeg announcement Toe</button>
-                <dialog id="my_modal_1" class="modal">
-                    <div class="modal-box">
-                        <h3 class="font-bold text-lg">Geef hier je announcement hier</h3>
-                        <form class="form-control" method="post" action="announcement.php">
-                        <textarea class="textarea textarea-bordered h-18  text-black bg-white" name="titel" placeholder="Geef announcement Titel toe"></textarea>
-                        <br><br>
-                           <textarea class="textarea textarea-bordered h-24  text-black bg-white" name="announcement" placeholder="Geef announcement Toe"></textarea>
-                                <div class="modal-action">
-                                    <form method="post">
-                                        <input type="submit" value="submit" name="toevoegen"  class="btn btn-ghost text-black hover:text-white hover:bg-black">  
-                                        <button class="btn">Cancel</button>';
-                                        if (isset($_POST["toevoegen"])) {
-                                            $Titel = $_POST["titel"];
-                                           $Announcement = $_POST["announcement"];
-                                           $gemaakteTijdstip = date("Y-m-d");
-                       
-                                           if(addAnnouncement($mysqli, $Titel, $Announcement, $gemaakteTijdstip )) {
-                                               header('location: announcement.php');
-                                           }
-                                       }
-                                   ;
-                       
-                                   '</form>
-                                </div>
-                           </div>
-                    </div>
-               </dialog>
-               </div>
-               </div>';
-                                    }
+                <a href="announcementToevoegen.php" class="btn hover:bg-[#000048] text-center">Voeg Announcement Toe</a>';
+            }
                     foreach(getAnnouncements($mysqli) as $row) {
                         echo "
                         <tr>

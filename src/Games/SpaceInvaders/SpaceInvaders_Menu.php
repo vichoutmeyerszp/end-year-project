@@ -1,3 +1,12 @@
+<?php
+include "../../connect.php";
+include "../../functions/maintenanceFunctions.php";
+
+if(checkmaintenanceSPaceInvaders($mysqli) == "1") {
+    header('location: ../../index.php');
+}
+
+?>
 
 
 
