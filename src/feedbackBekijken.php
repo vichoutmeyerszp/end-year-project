@@ -14,7 +14,6 @@ include "components/navbar.php";
   <table class="table">
     <thead>
       <tr>
-        <th>feedback-id</th>
         <th>Email feedback</th>
         <th>Gegeven feedback</th>
         <th>Gegeven score</th>
@@ -29,7 +28,6 @@ if(isset($_GET['Colors'])) {
 
 
             <tr>
-                <td>'.$row["feedbackid"].'</td>
                 <td>'.$row["email"].'</td>
                 <td>'.$row["feedback"].'</td>
                 <td>'.$row["score"].'</td>
@@ -46,7 +44,6 @@ if(isset($_GET['SpaceInvaders'])) {
     foreach(getReview($mysqli, "SpaceInvaders") as $row){
 
         echo '<tr>
-        <td>'.$row["feedbackid"].'</td>
         <td>'.$row["email"].'</td>
         <td>'.$row["feedback"].'</td>
         <td>'.$row["score"].'</td>
@@ -57,7 +54,6 @@ if(isset($_GET['SpaceInvaders'])) {
 if(isset($_GET['Tetris'])) {
     foreach(getReview($mysqli, "Tetris") as $row){
         echo '<tr>
-        <td>'.$row["feedbackid"].'</td>
         <td>'.$row["email"].'</td>
         <td>'.$row["feedback"].'</td>
         <td>'.$row["score"].'</td>
@@ -68,7 +64,6 @@ if(isset($_GET['Tetris'])) {
 if(isset($_GET['BSC'])) {
     foreach(getReview($mysqli, "BSC") as $row){
         echo '<tr>
-        <td>'.$row["feedbackid"].'</td>
         <td>'.$row["email"].'</td>
         <td>'.$row["feedback"].'</td>
         <td>'.$row["score"].'</td>
@@ -79,7 +74,6 @@ if(isset($_GET['BSC'])) {
 if(isset($_GET['Snake'])) {
     foreach(getReview($mysqli, "Snake") as $row){
         echo '<tr>
-        <td>'.$row["feedbackid"].'</td>
         <td>'.$row["email"].'</td>
         <td>'.$row["feedback"].'</td>
         <td>'.$row["score"].'</td>
