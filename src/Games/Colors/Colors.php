@@ -29,7 +29,7 @@
     </div>
     <span id="correct"></span>
     <span id="time"></span>
-    <img src="data/Correct.png" alt="Correct" id="checkmark">
+    <img src="data/Correct.jpg" alt="Correct" id="checkmark">
    <img src="data/Wrong.jpg" alt="Wrong" id="wrong">
 
 <script src="Colors.js"></script>
