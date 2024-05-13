@@ -23,7 +23,6 @@ include "components/navbar.php";
 <?php
 if(isset($_GET['Colors'])) {
     foreach(getReview($mysqli, $_GET["Colors"]) as $row) {
-        var_dump(getReview($mysqli, $_GET["Colors"]));
         echo '
 
 

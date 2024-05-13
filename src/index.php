@@ -40,7 +40,7 @@ include "./functions/maintenanceFunctions.php";
 
 
 
-<div class="carousel w-124 p-4 h-max space-x-4 bg-neutral rounded-box scroll-smooth">
+<div class="carousel w-124 p-4 h-max space-x-4 bg-neutral scroll-smooth">
   <div class="carousel-item h-104  p-200">
   <div class="card w-96 bg-[#D3D3D3] shadow-xl">
  <div class="card-body items-center text-center">
