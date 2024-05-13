@@ -34,7 +34,7 @@ CREATE TABLE IF NOT EXISTS `gesprekken` (
   `outgoing_message_id` int NOT NULL,
   `incoming_message_id` int NOT NULL,
   PRIMARY KEY (`berichtid`)
-) ENGINE=MyISAM AUTO_INCREMENT=16 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=16 DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
 
@@ -49,7 +49,7 @@ CREATE TABLE IF NOT EXISTS `tblannouncements` (
   `AnnouncementText` text CHARACTER SET utf8mb3 COLLATE utf8mb3_general_ci NOT NULL,
   `StartTime` date NOT NULL,
   PRIMARY KEY (`Announcementid`)
-) ENGINE=MyISAM AUTO_INCREMENT=17 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=17 DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `tblannouncements`
@@ -75,7 +75,7 @@ CREATE TABLE IF NOT EXISTS `tblfeedback` (
   `feedback` text NOT NULL,
   `score` int NOT NULL,
   PRIMARY KEY (`feedbackid`)
-) ENGINE=MyISAM AUTO_INCREMENT=19 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=19 DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
 
@@ -94,7 +94,7 @@ CREATE TABLE IF NOT EXISTS `tblgebruikers` (
   `profielfoto` text CHARACTER SET utf8mb3 COLLATE utf8mb3_general_ci NOT NULL,
   `beschrijving` text CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
   PRIMARY KEY (`gebruikerid`)
-) ENGINE=MyISAM AUTO_INCREMENT=17 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=17 DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `tblgebruikers`
@@ -118,7 +118,7 @@ CREATE TABLE IF NOT EXISTS `tblgoals` (
   `Prijs` text NOT NULL,
   `StartTime` date NOT NULL,
   PRIMARY KEY (`Goalid`)
-) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `tblgoals`
@@ -140,7 +140,7 @@ CREATE TABLE IF NOT EXISTS `tblmaintenance` (
   `Tetris` tinyint(1) NOT NULL,
   `BSC` tinyint(1) NOT NULL,
   `Snake` tinyint(1) NOT NULL
-) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `tblmaintenance`
@@ -161,7 +161,7 @@ CREATE TABLE IF NOT EXISTS `tblverzoeken` (
   `verzoeker` int NOT NULL,
   `ontvanger` int NOT NULL,
   PRIMARY KEY (`verzoekid`)
-) ENGINE=MyISAM AUTO_INCREMENT=14 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=14 DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
 
@@ -175,7 +175,7 @@ CREATE TABLE IF NOT EXISTS `tblvrienden` (
   `gebruiker1` int NOT NULL,
   `gebruiker2` int NOT NULL,
   PRIMARY KEY (`vriendid`)
-) ENGINE=MyISAM AUTO_INCREMENT=97 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=97 DEFAULT CHARSET=utf8mb4;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
