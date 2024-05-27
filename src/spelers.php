@@ -35,7 +35,11 @@ if (!isset($_SESSION['login'])) {
                     <img src="../public/images/<?php echo $row['profielfoto'] ?>">
                         <div class="details">
                             <span><?php echo $row['voornaam'] . " " . $row['naam'] ?></span>
-                            <?php if(!existingRequest($mysqli, $_SESSION['login'], $row['gebruikerid'])) { 
+                            <?php  if(ifExistsFriend($mysqli, $_SESSION["login"], $row["gebruikerid"])) {
+                                echo '<input value="Al bevriend" class="input input-bordered w-full max-w-md text-black bg-white" disabled/><br><br>';
+                            }
+                            
+                            else if(!existingRequest($mysqli, $_SESSION['login'], $row['gebruikerid'])) { 
                                 echo'
                                 <input value="Verzoek gestuurd" class="input input-bordered w-full max-w-md text-black bg-white" disabled/><br><br>';
                             }

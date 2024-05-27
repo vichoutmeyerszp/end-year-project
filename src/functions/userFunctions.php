@@ -96,4 +96,9 @@ function deleteFriend($connection, $gebruiker1, $gebruiker2) {
     return $resultaat;
 }
 
+function ifExistsFriend($connection, $gebruiker1, $gebruiker2) {
+    $resultaat = $connection->query("SELECT * FROM tblvrienden WHERE gebruiker1 = $gebruiker1 AND gebruiker2 = $gebruiker2");
+    return !($resultaat->num_rows == 0);
+}
+
 ?>
