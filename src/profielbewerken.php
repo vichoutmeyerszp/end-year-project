@@ -12,7 +12,7 @@ session_start();
 
 
 <div class="flex justify-start items-start">
-            <a href="index.php" class="btn btn-ghost normal-case text-xl text-black">Game World</a> 
+            <a href="index.php" class="btn btn-ghost normal-case text-xl text-white">Game World</a> 
           </div>
 <style>
 
